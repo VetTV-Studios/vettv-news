@@ -1,5 +1,5 @@
 // Turns the built site in dist/ into meta-refresh redirect pages for the old
-// GitHub Pages URL (vettv-studios.github.io/vettv-handheld-news/) -> news.vettvstudios.com.
+// GitHub Pages URL (vettv-studios.github.io/vettv-news/, formerly /vettv-handheld-news/) -> news.vettvstudios.com.
 import { readdirSync, statSync, mkdirSync, writeFileSync, copyFileSync } from 'node:fs';
 import { join, relative, dirname } from 'node:path';
 const SRC = 'dist', OUT = 'dist-pages', NEW = 'https://news.vettvstudios.com';

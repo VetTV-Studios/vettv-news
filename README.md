@@ -3,8 +3,7 @@
 Gaming, tech and news from VetTV Studios. Astro static site.
 
 - Live: https://news.vettvstudios.com (Vercel project `vettv-news`, auto-deploys on push to `main`)
-- Old URL https://vettv-studios.github.io/vettv-handheld-news/ redirects to the new domain (GitHub Actions builds redirect pages via `scripts/pages-redirect.mjs`).
-- The repo is still named `vettv-handheld-news`; the site name is VetTV News.
+- Repo: https://github.com/VetTV-Studios/vettv-news (renamed from vettv-handheld-news on Nov 2, 2026). GitHub Pages (https://vettv-studios.github.io/vettv-news/) redirects every page to the new domain via `scripts/pages-redirect.mjs`.
 
 ```
 npm ci && npm run build   # output in dist/
