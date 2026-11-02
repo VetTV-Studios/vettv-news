@@ -4,7 +4,7 @@ description: "Microsoft has confirmed phone message previews in Start and phone 
 summary: "Microsoft has confirmed phone message previews in Start and phone controls in Quick Settings. Separately, a Store app spotted by Windows Latest hints that Settings could one day update through the Microsoft Store, but it's only a test."
 pubDate: 2026-10-17
 publishedAt: 2026-10-17T20:54:39-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: windows
 type: news
 tags: ["windows-11","microsoft","phone-link","start-menu","windows-insider"]

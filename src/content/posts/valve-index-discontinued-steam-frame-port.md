@@ -4,7 +4,7 @@ description: "Valve has ended Index production and cut the remaining stock by 20
 summary: "Valve has ended Index production and cut the remaining stock by 20%. At the same time, its newly published Steam Frame pinout shows exactly what the headset's 44-pin front port can do."
 pubDate: 2026-10-14
 publishedAt: 2026-10-17T20:54:23-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: handhelds
 type: news
 tags: ["valve-index","steam-frame","steamvr","virtual-reality","valve"]

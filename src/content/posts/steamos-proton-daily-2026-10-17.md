@@ -4,7 +4,7 @@ description: "SteamOS 3.9 brings Plasma 6.7, Linux 7.2 and a new Wi-Fi backend t
 summary: "SteamOS 3.9 brings Plasma 6.7, Linux 7.2 and a new Wi-Fi backend to the beta channel. Plus Steam starts up faster again, Proton Experimental fixes an ARC Raiders crash, and Valve patches Zero Company with a launch option."
 pubDate: 2026-10-17
 publishedAt: 2026-10-17T20:54:39-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: linux-steamos
 type: news
 tags: ["steamos","proton","steam-deck","linux-gaming","legion-go"]

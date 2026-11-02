@@ -5,7 +5,7 @@ summary: "Experimental build 26340.9750 gives Gaming Task View in Xbox mode a na
 seoTitle: "Windows 11 Build 26340.9750: Xbox Mode Gaming Task View and Run"
 pubDate: 2026-10-18
 publishedAt: 2026-10-18T10:33:30-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: windows
 type: news
 tags: ["windows-11","xbox-mode","pc-gaming","windows-insider","gaming-handhelds"]

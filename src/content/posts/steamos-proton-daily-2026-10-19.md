@@ -5,7 +5,7 @@ summary: "Decky Loader's new stable release fixes breakage from a recent Steam u
 seoTitle: "Decky Loader 3.3.0, GE-Proton11-10 and Enshrouded Deck Verified"
 pubDate: 2026-10-19
 publishedAt: 2026-10-19T13:10:00.132Z
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: linux-steamos
 type: news
 tags: ["steamos","proton","steam-deck","decky-loader","linux-gaming"]

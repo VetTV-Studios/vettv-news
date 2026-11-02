@@ -4,7 +4,7 @@ description: "Google is rolling out Gmail's AI Inbox and Gmail Live to paid Work
 summary: "Google is rolling out Gmail's AI Inbox and Gmail Live to paid Workspace accounts. Here are the exact plans, dates and limits."
 pubDate: 2026-10-17
 publishedAt: 2026-10-17T20:54:39-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: news
 type: news
 tags: ["gmail","gemini","google-workspace","ai","productivity"]

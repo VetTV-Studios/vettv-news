@@ -5,7 +5,7 @@ summary: "Valve's October 16 beta says it fixed Vulkan games hanging after alt-t
 seoTitle: "Steam Beta Linux Alt-Tab Fix: Overlay Hang Still Reported"
 pubDate: 2026-10-19
 publishedAt: 2026-10-19T16:38:16.396Z
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: linux-steamos
 type: news
 tags: ["steam","linux-gaming","steamos","steam-client-beta","bug-fix"]

@@ -5,7 +5,7 @@ summary: "SteamOS 3.9.5 rolled out to everyone on Friday. Here's everything that
 seoTitle: "SteamOS 3.9 Stable: Arch, Plasma 6.7.3, Linux 7.2 and More"
 pubDate: 2026-10-24
 publishedAt: 2026-10-24T13:06:19.196Z
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: linux-steamos
 type: news
 trending: true

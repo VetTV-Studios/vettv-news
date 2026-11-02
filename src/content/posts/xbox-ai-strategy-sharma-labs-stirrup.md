@@ -5,7 +5,7 @@ summary: "Xbox leadership has promised human-made games and said studios face no
 seoTitle: "Xbox and AI in 2026: Sharma, Booty, Xbox Labs and Stirrup"
 pubDate: 2026-10-19
 publishedAt: 2026-10-19T15:56:02.539Z
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: gaming
 type: news
 tags: ["xbox","microsoft","artificial-intelligence","gaming-news","game-development"]

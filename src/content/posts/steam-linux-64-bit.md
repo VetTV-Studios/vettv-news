@@ -4,7 +4,7 @@ description: "Valve's October 15 Steam client beta moves the Linux client to 64-
 summary: "Valve's October 15 Steam client beta moves the Linux client to 64-bit inside the same container tech Steam games use. It also adds Achievement Sets and a Remote Play Display Style setting."
 pubDate: 2026-10-17
 publishedAt: 2026-10-17T20:54:39-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: linux-steamos
 type: news
 tags: ["steam","linux-gaming","steamos","steam-deck","achievements"]

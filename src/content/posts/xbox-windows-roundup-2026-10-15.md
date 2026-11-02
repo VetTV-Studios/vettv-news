@@ -4,7 +4,7 @@ description: "Xbox has formed a new Labs team to experiment with ports and brows
 summary: "Xbox has formed a new Labs team to experiment with ports and browser play, an indie showcase with 18 games is coming next Tuesday, and October's Windows 11 update fixes gaming mouse stutter."
 pubDate: 2026-10-15
 publishedAt: 2026-10-17T20:54:39-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: windows
 type: news
 tags: ["xbox","windows-11","id-xbox","xbox-labs","pc-gaming"]

@@ -4,7 +4,7 @@ description: "Jamie Craven's role in the Spedley collapse often comes up in cove
 summary: "Jamie Craven's role in the Spedley collapse often comes up in coverage of his son, Stake and Kick co-founder Ed Craven. Here is what the regulator and court records show, including a timing detail that is widely misstated."
 pubDate: 2026-10-17
 publishedAt: 2026-10-17T20:58:18-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: news
 type: news
 tags: ["australia","corporate-law","asic","business-history","finance"]

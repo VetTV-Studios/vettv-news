@@ -5,7 +5,7 @@ summary: "An open-source community project downloads Microsoft Store and PC Game
 seoTitle: "Xodus Nexus: Unofficial PC Game Pass Launcher for Steam Deck"
 pubDate: 2026-10-19
 publishedAt: 2026-10-19T17:06:01.044Z
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: linux-steamos
 type: news
 tags: ["steam-deck","steamos","pc-game-pass","linux-gaming","xbox"]

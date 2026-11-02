@@ -5,7 +5,7 @@ summary: "Court filings show Disney offered jobs to dozens of Character.AI emplo
 seoTitle: "Disney to Hire Most of Character.AI's Staff After Bankruptcy"
 pubDate: 2026-10-18
 publishedAt: 2026-10-18T19:17:40-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: news
 type: news
 tags: ["disney","character-ai","artificial-intelligence","tech-news","bankruptcy"]

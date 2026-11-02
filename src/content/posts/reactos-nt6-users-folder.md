@@ -5,7 +5,7 @@ summary: "A newly merged change moves ReactOS to the Windows Vista-style folder 
 seoTitle: "ReactOS Moves to C:\\Users: What the NT6 Folder Change Means"
 pubDate: 2026-10-18
 publishedAt: 2026-10-18T14:27:18-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: open-nt
 type: news
 tags: ["reactos","open-source","windows-compatibility","operating-systems","retro-computing"]

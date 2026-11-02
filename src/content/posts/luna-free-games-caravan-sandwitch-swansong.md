@@ -5,7 +5,7 @@ summary: "Two story-driven PC games joined Luna's Free Games with Prime lineup o
 seoTitle: "Luna Free Games: Caravan SandWitch and Swansong With Prime"
 pubDate: 2026-10-19
 publishedAt: 2026-10-19T05:13:08.070Z
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: gaming
 type: news
 tags: ["amazon-luna","prime-gaming","free-games","pc-gaming","handheld-gaming"]

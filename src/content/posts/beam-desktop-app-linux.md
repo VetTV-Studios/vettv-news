@@ -4,7 +4,7 @@ description: "The multistreaming platform's new desktop app adds Linux one day a
 summary: "The multistreaming platform's new desktop app adds Linux one day after Windows, with FTL low-latency streaming, 100+ destinations, and unified chat and viewer counts. Here's what's confirmed."
 pubDate: 2026-10-17
 publishedAt: 2026-10-17T20:54:39-05:00
-author: "Vet, VetTV Handheld"
+author: "Vet, VetTV Studios"
 category: linux-steamos
 type: news
 tags: ["linux","live-streaming","beam","steamos","content-creators"]
