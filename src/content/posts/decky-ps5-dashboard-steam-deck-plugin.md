@@ -2,7 +2,7 @@
 title: "Same Developer Behind the Xbox Dashboard Plugin Brings a PS5-Style Home Screen to Steam Deck"
 description: "Decky PS5 Dashboard is an unofficial, MIT-licensed community plugin, not from Valve or Sony, installed manually as a ZIP through Decky's developer mode"
 summary: "Decky PS5 Dashboard is an unofficial, MIT-licensed community plugin, not from Valve or Sony, installed manually as a ZIP through Decky's developer mode"
-pubDate: 2026-10-30
+pubDate: 2026-11-01
 publishedAt: 2026-11-01T14:04:24.000Z
 author: "Vet, VetTV Studios"
 category: handhelds

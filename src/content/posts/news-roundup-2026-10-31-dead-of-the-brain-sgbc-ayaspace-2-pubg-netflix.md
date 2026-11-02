@@ -2,7 +2,7 @@
 title: "Roundup: Dead of the Brain Hits Steam, the SGBC FPGA Console, AYASPACE 2, a PUBG Netflix Series and Apple Intelligence in China"
 description: "Five quick stories for October 31, 2026"
 summary: "Five quick stories for October 31, 2026"
-pubDate: 2026-10-30
+pubDate: 2026-10-31
 publishedAt: 2026-10-31T13:03:34.000Z
 author: "Vet, VetTV Studios"
 category: news

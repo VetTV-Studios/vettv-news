@@ -2,7 +2,7 @@
 title: "Retro Roundup: DuckStation's Rewritten Android App Hits Beta, Loadout 0.11.1 Drops RecompHub"
 description: "The PS1 emulator's Jetpack Compose rewrite brings desktop-style features to Android 7 and up, while the Linux handheld overlay removes its recompiled-games plugin"
 summary: "The PS1 emulator's Jetpack Compose rewrite brings desktop-style features to Android 7 and up, while the Linux handheld overlay removes its recompiled-games plugin"
-pubDate: 2026-10-30
+pubDate: 2026-11-01
 publishedAt: 2026-11-01T14:04:24.000Z
 author: "Vet, VetTV Studios"
 category: handhelds

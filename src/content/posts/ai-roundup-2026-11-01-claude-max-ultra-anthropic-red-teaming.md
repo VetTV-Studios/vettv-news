@@ -2,7 +2,7 @@
 title: "AI Roundup: Claude Max Plans Become Max and Ultra, Anthropic Automates Misalignment Red-Teaming"
 description: "Prices stay at $100 and $200 a month, verified Ultra accounts lose the five-hour limit, and Anthropic sets thousands of Claude agents loose on a training-data monitor"
 summary: "Prices stay at $100 and $200 a month, verified Ultra accounts lose the five-hour limit, and Anthropic sets thousands of Claude agents loose on a training-data monitor"
-pubDate: 2026-10-30
+pubDate: 2026-11-01
 publishedAt: 2026-11-01T14:04:23.000Z
 author: "Vet, VetTV Studios"
 category: news

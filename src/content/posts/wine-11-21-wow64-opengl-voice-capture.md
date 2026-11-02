@@ -2,7 +2,7 @@
 title: "Wine 11.21 Speeds Up WoW64 OpenGL and Fixes Skyrim, BioShock 2 Remastered Crashes"
 description: "The latest development release adds a first Voice Capture DSP library, improves user account support and closes 20 bugs"
 summary: "The latest development release adds a first Voice Capture DSP library, improves user account support and closes 20 bugs"
-pubDate: 2026-10-30
+pubDate: 2026-10-31
 publishedAt: 2026-10-31T13:03:35.000Z
 author: "Vet, VetTV Studios"
 category: linux-steamos

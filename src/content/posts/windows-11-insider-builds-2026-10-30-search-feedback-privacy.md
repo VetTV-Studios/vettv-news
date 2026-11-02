@@ -2,7 +2,7 @@
 title: "Windows 11 Insider Builds for Oct 30 Expand the New Windows Search"
 description: "Beta and Experimental channel builds add inline sliders, phone actions and result filters to Search, and businesses get a policy to keep Feedback Hub posts private"
 summary: "Beta and Experimental channel builds add inline sliders, phone actions and result filters to Search, and businesses get a policy to keep Feedback Hub posts private"
-pubDate: 2026-10-30
+pubDate: 2026-10-31
 publishedAt: 2026-10-31T13:03:34.000Z
 author: "Vet, VetTV Studios"
 category: windows

@@ -2,7 +2,7 @@
 title: "Steam Frame VR Roundup: Fan-Made Unreal VR Ports Go Standalone, Forefront Adds Breakthrough Mode"
 description: "Game Or Die's unofficial Unreal Gold and Unreal Tournament conversions run on Steam Frame and Quest 3 without a PC during play, and Forefront's Operation: Sandstorm lists improved foveated rendering on the Frame"
 summary: "Game Or Die's unofficial Unreal Gold and Unreal Tournament conversions run on Steam Frame and Quest 3 without a PC during play, and Forefront's Operation: Sandstorm lists improved foveated rendering on the Frame"
-pubDate: 2026-10-30
+pubDate: 2026-11-01
 publishedAt: 2026-11-01T14:04:24.000Z
 author: "Vet, VetTV Studios"
 category: gaming

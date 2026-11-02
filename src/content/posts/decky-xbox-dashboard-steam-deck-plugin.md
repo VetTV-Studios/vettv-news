@@ -2,7 +2,7 @@
 title: "Community Decky Plugin Puts an Xbox Series-Style Dashboard on the Steam Deck"
 description: "Decky Xbox Dashboard is a fan-made, MIT-licensed plugin, not a Valve or Microsoft product, that reskins Game Mode's home screen with Xbox-style tabs, game pages and colors"
 summary: "Decky Xbox Dashboard is a fan-made, MIT-licensed plugin, not a Valve or Microsoft product, that reskins Game Mode's home screen with Xbox-style tabs, game pages and colors"
-pubDate: 2026-10-30
+pubDate: 2026-10-31
 publishedAt: 2026-10-31T13:03:34.000Z
 author: "Vet, VetTV Studios"
 category: handhelds
