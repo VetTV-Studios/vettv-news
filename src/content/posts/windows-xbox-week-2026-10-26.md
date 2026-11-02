@@ -30,7 +30,7 @@ sources:
     url: "https://www.pushsquare.com/news/2026/10/microsoft-gives-dishonored-dev-more-time-to-find-a-buyer-needs-a-partner-to-finish-blade"
 source: "Article Desk: windows-xbox-week-2026-10-26.md"
 ---
-The biggest PC story this week was [Advanced Shader Delivery reaching every major GPU vendor](/vettv-handheld-news/posts/advanced-shader-delivery-all-rtx-2026-10/). We've covered it separately. Here's everything else.
+The biggest PC story this week was [Advanced Shader Delivery reaching every major GPU vendor](/posts/advanced-shader-delivery-all-rtx-2026-10/). We've covered it separately. Here's everything else.
 
 ## ID@Xbox x IGN Showcase (Oct. 20)
 

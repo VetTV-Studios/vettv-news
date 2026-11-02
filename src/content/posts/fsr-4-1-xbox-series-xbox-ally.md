@@ -39,6 +39,6 @@ ASUS says the toggle applies FSR 4.1 to games that support **FSR 3.1 or newer**,
 
 AMD says it built a more efficient FSR 4.1 model for Ryzen AI Z2 Extreme, Z2 Extreme and Z2 A processors. ASUS says the version on the Ally X and X20 is less than half the size of the original INT8 model.
 
-We covered the earlier FSR 4.1.2 Lite news and the Ally's Game Bar widget [here](/vettv-handheld-news/posts/fsr-4-1-2-lite-rog-ally-game-bar-widget/).
+We covered the earlier FSR 4.1.2 Lite news and the Ally's Game Bar widget [here](/posts/fsr-4-1-2-lite-rog-ally-game-bar-widget/).
 
 *Sources: [AMD Newsroom](https://newsroom.amd.com/news/amd-fsr-upscaling-4-1-boosts-frames-image-quality/), [ASUS ROG](https://rog.asus.com/articles/rog-ally/amd-fsr-upscaling-41-is-coming-to-the-rog-xbox-ally-x-and-x20-in-preview/), [Digital Foundry (Jason Ronald quote)](https://www.digitalfoundry.net/news/2026/10/microsoft-fsr-4-1-coming-very-soon-to-xbox-game-developers-for-series-x-series-s). Report: [Windows Central](https://www.windowscentral.com/gaming/xbox/amd-and-microsoft-announce-fsr-4-1-support-for-xbox-series-x-s-and-xbox-ally-bringing-huge-performance-gains).*

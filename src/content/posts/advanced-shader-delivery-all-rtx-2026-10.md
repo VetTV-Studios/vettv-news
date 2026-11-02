@@ -49,7 +49,7 @@ Commenters on Microsoft's post report problems. One says that on laptops with sw
 
 *Opinion/analysis:* SteamOS and Steam Deck players already have a version of this. Steam's Vulkan shader pre-caching is built on Valve's open-source [Fossilize](https://github.com/ValveSoftware/Fossilize) format for serializing Vulkan pipeline state, and Steam can download those caches for supported hardware. ASD is Microsoft's DirectX 12 answer, built into the driver and store pipeline. The real test is Steam. If ASD reaches Steam on Windows, a large share of the PC library could stop compiling shaders on first launch. That depends on developers. Unreal Engine 5.8.4 can produce SODBs today, but Unity support won't arrive until 2027.
 
-*VetTV Handheld News hasn't tested ASD. Everything above comes from Microsoft, NVIDIA and public user comments.*
+*VetTV News hasn't tested ASD. Everything above comes from Microsoft, NVIDIA and public user comments.*
 
 ## Sources
 

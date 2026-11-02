@@ -1,5 +1,5 @@
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/vettv-handheld-news/'; const S = new URL('../screenshots/', import.meta.url).pathname;
+const B = 'http://localhost:4321/'; const S = new URL('../screenshots/', import.meta.url).pathname;
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 const shots = [['home-desktop', '', 1280], ['home-mobile', '', 390], ['upcoming-desktop', 'upcoming/', 1280], ['soft-launches-desktop', 'soft-launches/', 1280], ['delistings-desktop', 'delistings/', 1280]];
 for (const [k, path, w] of shots) {

@@ -1,7 +1,7 @@
 // Usage: node scripts/shots-compare.mjs <outdir> <width> [width...]  — full-page shots of key pages from the local preview.
 import { chromium } from 'playwright-core'; import fs from 'node:fs';
 const [out, ...ws] = process.argv.slice(2); fs.mkdirSync(out, { recursive: true });
-const B = 'http://localhost:4321/vettv-handheld-news/';
+const B = 'http://localhost:4321/';
 const pages = { home: '', section: 'news/', article: 'posts/steamos-proton-daily-2026-10-19/', search: 'search/?q=steamos', cloud: 'cloud-gaming/', subscribe: 'subscribe/' };
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 for (const w of ws.map(Number)) {

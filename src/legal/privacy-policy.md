@@ -5,7 +5,7 @@ title: Privacy Policy
 
 *Last updated: October 27, 2026*
 
-VetTV Handheld News ("we," "us") is published by VetTV Studios. This page explains what information the site collects and how it's used.
+VetTV News ("we," "us") is published by VetTV Studios. This page explains what information the site collects and how it's used.
 
 ## What we collect
 - **Nothing while you read.** The site sets no cookies and runs no analytics, ad trackers or third-party tracking scripts.

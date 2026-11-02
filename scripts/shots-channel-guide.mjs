@@ -1,5 +1,5 @@
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/vettv-handheld-news/'; const S = new URL('../screenshots/', import.meta.url).pathname;
+const B = 'http://localhost:4321/'; const S = new URL('../screenshots/', import.meta.url).pathname;
 const U = B + 'posts/vettv-channel-guide-status-oct-2026/';
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 for (const [n, w] of [['channel-guide-article-desktop', 1280], ['channel-guide-article-mobile', 390]]) {

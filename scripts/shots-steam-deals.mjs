@@ -1,5 +1,5 @@
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/vettv-handheld-news/'; const S='/workspace/vettv-handheld-news/screenshots/';
+const B = 'http://localhost:4321/'; const S='/workspace/screenshots/';
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 const shots = [['steam-deals-home-desktop',1280,'',true],['steam-deals-section-desktop',1280,'steam-deals/',true],['steam-deals-article-desktop',1280,'posts/double-fine-humble-bundle-steam-deck/',true],['steam-deals-article-mobile',390,'posts/double-fine-humble-bundle-steam-deck/',true],['steam-deals-section-mobile',390,'steam-deals/',true]];
 for (const [n,w,u,full] of shots) {

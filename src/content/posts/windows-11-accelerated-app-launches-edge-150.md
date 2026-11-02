@@ -25,7 +25,7 @@ According to Microsoft, accelerated app launches make reopening an app that's al
 
 ## What you need
 
-The feature requires Windows 11's October preview update, KB5127936, or a later update. We covered what else that update brings in our [KB5127936 story](/vettv-handheld-news/posts/windows-11-kb5127936-context-menu-xbox-task-view/).
+The feature requires Windows 11's October preview update, KB5127936, or a later update. We covered what else that update brings in our [KB5127936 story](/posts/windows-11-kb5127936-context-menu-xbox-task-view/).
 
 ## Other apps
 

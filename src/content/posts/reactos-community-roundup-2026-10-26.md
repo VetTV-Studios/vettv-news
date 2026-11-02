@@ -83,7 +83,7 @@ Bryan Kirk (@Zero3K) [posted](https://x.com/Zero3K/status/2114431170712645820) a
 
 ## The takeaway
 
-*Opinion:* ReactOS itself moves slowly, but the projects built on it are moving fast. A fork running a modern local AI model and a Linux distro borrowing the ReactOS shell both suggest the codebase is useful beyond the main project. VetTV Handheld News hasn't tested any of these builds.
+*Opinion:* ReactOS itself moves slowly, but the projects built on it are moving fast. A fork running a modern local AI model and a Linux distro borrowing the ReactOS shell both suggest the codebase is useful beyond the main project. VetTV News hasn't tested any of these builds.
 
 ## Sources
 

@@ -1,4 +1,4 @@
-export const SITE = { name: 'VetTV Handheld News', tagline: 'Gaming, handheld PC, Windows, Linux & SteamOS and macOS news, guides and reviews', youtube: 'https://www.youtube.com/@VetTVHandheld', email: 'Vetgaming1982@outlook.com' };
+export const SITE = { name: 'VetTV News', tagline: 'Gaming, tech and news: handheld PCs, Windows, Linux & SteamOS, macOS, retro and more', youtube: 'https://www.youtube.com/@VetTVHandheld', email: 'Vetgaming1982@outlook.com' };
 // Official accounts (given by Vet, Oct 27 2026). Icons are simple generic glyphs.
 export const SOCIALS = [
   { k: 'youtube', name: 'YouTube', handle: '@VetTVHandheld', href: 'https://www.youtube.com/@VetTVHandheld', d: '<rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="M10 9v6l5-3z" fill="#0c0414"/>' },

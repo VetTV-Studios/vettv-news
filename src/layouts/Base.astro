@@ -34,7 +34,7 @@ const og = new URL(asset(image || 'brand/og-default-1200x630.png'), Astro.site);
 <body>
 <header class="top">
   <div class="wrap bar">
-    <a class="brand" href={url('')}><img class="brand-logo" src={asset('brand/vettv-studios-logo-transparent.svg')} alt="VetTV Studios" width="78" height="44" /><span>VetTV <b>Handheld</b> News</span></a>
+    <a class="brand" href={url('')}><img class="brand-logo" src={asset('brand/vettv-studios-logo-transparent.svg')} alt="VetTV Studios" width="78" height="44" /><span>VetTV <b>News</b></span></a>
     <nav class="top-links" aria-label="Content types"><a href={url('guides')}>Guides</a><a href={url('reviews')}>Reviews</a><a href={url('upcoming')}>Upcoming</a><a href={url('tags')}>Tags</a></nav>
     <form class="qs" action={url('search')} role="search"><input name="q" type="search" placeholder="Search…" aria-label="Search" /></form>
     <a class="m-only m-icon m-search" href={url('search')} aria-label="Search"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></a>
@@ -49,7 +49,7 @@ const og = new URL(asset(image || 'brand/og-default-1200x630.png'), Astro.site);
 <div class="m-only m-drawer" id="m-drawer" aria-label="Sections">
   <p class="m-drawer-h">Sections</p>
   {Object.entries(CATS).map(([k, v]) => <a class={`m-sec ${active === k ? 'on' : ''}`} href={url(k)}><b>{v}</b><small>{CAT_DESC[k]}</small></a>)}
-  <a class={`m-sec ${active === 'videos' ? 'on' : ''}`} href={url('videos')}><b>Videos</b><small>VetTV Handheld on YouTube.</small></a>
+  <a class={`m-sec ${active === 'videos' ? 'on' : ''}`} href={url('videos')}><b>Videos</b><small>VetTV on YouTube.</small></a>
   <p class="m-drawer-h">Trackers</p><div class="m-drawer-links"><a href={url('upcoming')}>Upcoming</a><a href={url('soft-launches')}>Soft Launches</a><a href={url('delistings')}>Delistings</a></div>
   <div class="m-drawer-links"><a href={url('guides')}>Guides</a><a href={url('reviews')}>Reviews</a><a href={url('tags')}>Tags</a><a href={url('subscribe')}>Subscribe</a><a href={asset('rss.xml')}>RSS</a><a href={SITE.youtube}>YouTube</a></div>
 </div>

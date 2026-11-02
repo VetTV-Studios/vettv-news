@@ -5,7 +5,7 @@ title: Terms of Use
 
 *Last updated: October 27, 2026*
 
-By using VetTV Handheld News, you agree to these terms.
+By using VetTV News, you agree to these terms.
 
 ## Content
 Articles, images and covers on this site belong to VetTV Studios unless marked otherwise. You're welcome to quote short excerpts with a link back to the original article. Please don't republish full articles without permission.

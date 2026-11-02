@@ -1,5 +1,5 @@
 import { chromium } from 'playwright-core';
-const B = process.env.BASE || 'https://vettv-studios.github.io/vettv-handheld-news/';
+const B = process.env.BASE || 'https://news.vettvstudios.com/';
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 for (const [vp, w, h] of [['desktop', 1280, 900], ['mobile', 390, 844]]) {
   const p = await (await b.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 2 })).newPage();

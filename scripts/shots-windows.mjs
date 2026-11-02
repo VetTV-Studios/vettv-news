@@ -1,5 +1,5 @@
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/vettv-handheld-news/'; const S = new URL('../screenshots/', import.meta.url).pathname;
+const B = 'http://localhost:4321/'; const S = new URL('../screenshots/', import.meta.url).pathname;
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 const posts = { 'win11-cd': 'windows-11-iso-on-a-cd', 'win7-kernel': 'win7-userspace-win10-kernel-wearr' };
 for (const [k, slug] of Object.entries(posts)) for (const [v, w] of [['desktop', 1280], ['mobile', 390]]) {

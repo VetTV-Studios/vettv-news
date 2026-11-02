@@ -1,10 +1,10 @@
 ---
-const { id = 'sub', heading = 'Get the VetTV Handheld weekly', compact = false } = Astro.props;
+const { id = 'sub', heading = 'Get the VetTV News weekly', compact = false } = Astro.props;
 ---
 <section class={`subscribe ${compact ? 'compact' : ''}`} data-pagefind-ignore aria-labelledby={`${id}-h`}>
   <div class="sub-copy">
     <h2 id={`${id}-h`}>{heading}</h2>
-    <p>A weekly email with the latest handheld news and guides. Steam Deck, Legion Go, SteamOS, Decky and more. No spam, unsubscribe anytime.</p>
+    <p>A weekly email with the latest gaming and tech news and guides. Handhelds, PC, Linux, retro and more. No spam, unsubscribe anytime.</p>
   </div>
   <form class="sub-form embeddable-buttondown-form" action="https://buttondown.com/api/emails/embed-subscribe/VetTVStudios" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/VetTVStudios', 'popupwindow')">
     <label for={`${id}-email`} class="sr">Email address</label>

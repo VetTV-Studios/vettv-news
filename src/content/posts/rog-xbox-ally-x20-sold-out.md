@@ -39,6 +39,6 @@ Windows Central says the chip and memory stay about the same (the Ryzen AI Z2 Ex
 
 A sellout tells you demand outran supply. It doesn't tell you how many units shipped. Windows Central itself points to limited production as one possible reason. ASUS hasn't published sales numbers or a restock date.
 
-The X20 is also one of the devices getting the FSR 4.1 preview ([our story](/vettv-handheld-news/posts/fsr-4-1-xbox-series-xbox-ally/)).
+The X20 is also one of the devices getting the FSR 4.1 preview ([our story](/posts/fsr-4-1-xbox-series-xbox-ally/)).
 
 *Sources: [ASUS press release](https://press.asus.com/news/press-releases/rog-xbox-ally-x20-anniversary-edition-available), [ASUS store page](https://rog.asus.com/us/gaming-handhelds/rog-ally/rog-xbox-ally-x20-2026/). Report: [Windows Central](https://www.windowscentral.com/hardware/handheld-gaming-pc/asus-rog-xbox-ally-x20-sold-out-in-days).*

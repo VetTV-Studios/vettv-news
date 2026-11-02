@@ -1,5 +1,5 @@
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/vettv-handheld-news/'; const S = new URL('../screenshots/', import.meta.url).pathname;
+const B = 'http://localhost:4321/'; const S = new URL('../screenshots/', import.meta.url).pathname;
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 const posts = { steamos39: 'steamos-3-9-stable-daily-2026-10-24', 'steam-frame': 'steam-frame-steamvr-2026-10-24' };
 for (const [k, slug] of Object.entries(posts)) for (const [v, w] of [['desktop', 1280], ['mobile', 390]]) {

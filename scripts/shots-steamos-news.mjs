@@ -1,5 +1,5 @@
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/vettv-handheld-news/'; const S = new URL('../screenshots/', import.meta.url).pathname;
+const B = 'http://localhost:4321/'; const S = new URL('../screenshots/', import.meta.url).pathname;
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 for (const [n, w, u] of [['steamos-news-section-desktop', 1280, 'steamos-news/'], ['steamos-news-section-mobile', 390, 'steamos-news/'], ['steamos-news-home-desktop', 1280, '']]) {
   const ctx = await b.newContext({ viewport: { width: w, height: w < 769 ? 844 : 900 }, deviceScaleFactor: w < 769 ? 2 : 1 }); const p = await ctx.newPage();

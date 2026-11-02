@@ -23,7 +23,7 @@ sources:
     url: "https://store.steampowered.com/app/1462040/"
 source: "Article Desk: game-pass-october-wave-2-2026.md"
 ---
-Xbox Wire's [October Wave 2 post](https://news.xbox.com/en-us/2026/10/20/xbox-game-pass-october-2026-wave-2/) went up Oct. 20, and the [@XBOXGamePass account](https://x.com/XBOXGamePass/status/2112574572012675169) shared it the same day. It covers nine additions through Nov. 3, an ESO update, two in-game perks, and 11 games leaving soon. Some of these, including Mouthwashing and Scramble Knights Online, were in our [weekly roundup](/vettv-handheld-news/posts/windows-xbox-week-2026-10-26/). This piece adds what that one didn't cover: **which tier gets each game** and the full list of departures.
+Xbox Wire's [October Wave 2 post](https://news.xbox.com/en-us/2026/10/20/xbox-game-pass-october-2026-wave-2/) went up Oct. 20, and the [@XBOXGamePass account](https://x.com/XBOXGamePass/status/2112574572012675169) shared it the same day. It covers nine additions through Nov. 3, an ESO update, two in-game perks, and 11 games leaving soon. Some of these, including Mouthwashing and Scramble Knights Online, were in our [weekly roundup](/posts/windows-xbox-week-2026-10-26/). This piece adds what that one didn't cover: **which tier gets each game** and the full list of departures.
 
 ## Coming to Game Pass
 

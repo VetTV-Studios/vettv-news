@@ -52,6 +52,6 @@ The repository now lists support for later game versions (1.2.1 and 1.4.3), unsi
 
 The project says you must own the game and use keys dumped from your own Switch. XDA notes that people can get dumps elsewhere, but that doesn't make it legal. Rules on dumping and backups vary by country.
 
-For more fan ports, see our look at the [RecompLauncher catalog](/vettv-handheld-news/posts/recomplauncher-console-recomp-catalog/).
+For more fan ports, see our look at the [RecompLauncher catalog](/posts/recomplauncher-console-recomp-catalog/).
 
 *Sources: [MacNativeGames on GitHub](https://github.com/ly05010419/MacNativeGames), [install guide](https://github.com/ly05010419/MacNativeGames/blob/main/docs/install.md), [how it works](https://github.com/ly05010419/MacNativeGames/blob/main/docs/how-it-works.md). Report: [XDA Developers](https://www.xda-developers.com/mac-gets-game-first-zelda-tears-of-the-kingdom-runs-natively-apple-m4-chip-nintendo/).*

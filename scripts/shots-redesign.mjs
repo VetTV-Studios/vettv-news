@@ -1,5 +1,5 @@
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/vettv-handheld-news/'; const S = new URL('../screenshots/', import.meta.url).pathname;
+const B = 'http://localhost:4321/'; const S = new URL('../screenshots/', import.meta.url).pathname;
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 const shots = [['home-desktop', '', 1280], ['home-mobile', '', 390], ['section-desktop', 'linux-steamos/', 1280], ['section-mobile', 'open-nt/', 390],
   ['article-desktop', 'posts/fsr-4-1-2-lite-rog-ally-game-bar-widget/', 1280], ['article-mobile', 'posts/steamos-3-9-stable-daily-2026-10-24/', 390], ['videos-desktop', 'videos/', 1280]];

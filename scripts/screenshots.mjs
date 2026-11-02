@@ -1,5 +1,5 @@
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/vettv-handheld-news/';
+const B = 'http://localhost:4321/';
 const pages = { home: '', section: 'news/', article: 'posts/steamos-3-9-2-beta-legion-go/', search: 'search/?q=steamos' };
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 for (const [vp, w, h] of [['desktop', 1280, 900], ['mobile', 390, 844]]) {
