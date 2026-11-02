@@ -11,7 +11,7 @@ const FOOT: [string, [string, string][]][] = [
   ['Channels', [['Official links', 'official-links'], ['Write to us', 'contact']]],
   ['Legal', [['Privacy Policy', 'privacy'], ['Terms of Use', 'terms'], ['Affiliate disclosure', 'affiliate-disclosure'], ['Content disclosure', 'content-disclosure']]],
 ];
-const og = new URL(asset(image || 'art/banner_2560x1440.png'), Astro.site);
+const og = new URL(asset(image || 'brand/og-default-1200x630.png'), Astro.site);
 ---
 <!doctype html>
 <html lang="en">
@@ -21,7 +21,7 @@ const og = new URL(asset(image || 'art/banner_2560x1440.png'), Astro.site);
 <meta name="description" content={description} />
 {noindex && <meta name="robots" content="noindex" />}
 <link rel="canonical" href={canonical} />
-<link rel="icon" href={asset('art/watermark_150x150.png')} />
+<link rel="icon" href={asset('favicon.ico')} sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href={asset('favicon-32.png')} /><link rel="apple-touch-icon" sizes="180x180" href={asset('apple-touch-icon.png')} /><link rel="manifest" href={asset('site.webmanifest')} />
 <link rel="alternate" type="application/rss+xml" title={SITE.name} href={asset('rss.xml')} />
 <link rel="sitemap" href={asset('sitemap-index.xml')} />
 <meta property="og:site_name" content={SITE.name} /><meta property="og:title" content={fullTitle} />
@@ -34,7 +34,7 @@ const og = new URL(asset(image || 'art/banner_2560x1440.png'), Astro.site);
 <body>
 <header class="top">
   <div class="wrap bar">
-    <a class="brand" href={url('')}><img src={asset('art/profile_800x800.png')} alt="" width="40" height="40" /><span>VetTV <b>Handheld</b> News</span></a>
+    <a class="brand" href={url('')}><img class="brand-logo" src={asset('brand/vettv-studios-logo-transparent.svg')} alt="VetTV Studios" width="78" height="44" /><span>VetTV <b>Handheld</b> News</span></a>
     <nav class="top-links" aria-label="Content types"><a href={url('guides')}>Guides</a><a href={url('reviews')}>Reviews</a><a href={url('upcoming')}>Upcoming</a><a href={url('tags')}>Tags</a></nav>
     <form class="qs" action={url('search')} role="search"><input name="q" type="search" placeholder="Search…" aria-label="Search" /></form>
     <a class="m-only m-icon m-search" href={url('search')} aria-label="Search"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></a>
