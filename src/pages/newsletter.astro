@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro'; import Subscribe from '../components/Subscribe.astro';
+---
+<Base title="Newsletter" description="The VetTV News weekly: one Sunday email with the week's stories. What we send and how we handle your email." active="subscribe">
+  <h1 class="page-h">The VetTV News weekly</h1>
+  <Subscribe id="nl-sub" heading="Sign up" />
+  <section class="prose">
+    <h2>What you get</h2>
+    <p>One email a week, on Sunday evening (Central Time). It lists that week's stories with the cover, a one-line summary and a link. Now and then we mention VetTV projects like the <a href="https://vettvretro.com/#premium">VetTV Channel Guide Supporter tier</a> or <a href="https://vettvstudios.com">VetTV Studios</a>.</p>
+    <h2>Your privacy</h2>
+    <ul>
+      <li>We only ask for your email address.</li>
+      <li>You confirm by email before you're added (double opt-in).</li>
+      <li>We never sell or share your address. It's stored only by our email provider so it can send the newsletter.</li>
+      <li>Every email has a one-click unsubscribe link.</li>
+    </ul>
+    <p>See the full <a href="/privacy/">privacy policy</a>. Questions? <a href="/contact/">Contact us</a>.</p>
+  </section>
+</Base>
