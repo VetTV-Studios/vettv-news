@@ -9,7 +9,7 @@ VetTV News ("we," "us") is published by VetTV Studios. This page explains what i
 
 ## What we collect
 - **Nothing while you read.** The site sets no cookies and runs no analytics, ad trackers or third-party tracking scripts.
-- **Newsletter signups.** If you subscribe, your email address goes to our newsletter provider, [Buttondown](https://buttondown.com/legal/privacy), which stores it and sends the newsletter. We use it only to send that newsletter.
+- **Newsletter signups.** If you subscribe, your email address goes to our newsletter provider, [Kit](https://kit.com/privacy), which stores it and sends the newsletter. We use it only to send that newsletter.
 - **Email you send us.** If you write to us, we keep your message and address only to reply and follow up.
 
 ## Hosting

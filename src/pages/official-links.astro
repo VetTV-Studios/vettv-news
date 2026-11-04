@@ -9,7 +9,7 @@ import Base from '../layouts/Base.astro'; import { SITE, SOCIALS, url, asset } f
       <ul>
         {SOCIALS.map(x => <li><b>{x.name}:</b> <a href={x.href} rel="me noopener">{x.handle}</a></li>)}
         <li><b>RSS:</b> <a href={asset('rss.xml')}>{new URL(asset('rss.xml'), Astro.site).href}</a></li>
-        <li><b>Newsletter:</b> <a href={url('subscribe')}>VetTV News weekly</a> (via Buttondown)</li>
+        <li><b>Newsletter:</b> <a href={url('subscribe')}>VetTV News weekly</a> (via Kit)</li>
       </ul>
     </div>
   </article>
