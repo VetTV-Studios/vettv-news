@@ -8,11 +8,13 @@ author: "Vet, VetTV Studios"
 category: gaming
 type: news
 tags: ["world-of-warcraft", "blizzard", "mmo", "launch"]
-platforms: ["PC"]
+platforms: ["Windows", "Mac"]
 trending: true
 draft: false
 cover: "covers/world-of-warcraft-forever-launch-time-november-4.jpg"
 sources:
+  - title: "Blizzard: New Player's Starter Guide: Welcome to World of Warcraft: Forever"
+    url: "https://news.blizzard.com/en-us/article/24315280/new-players-starter-guide-welcome-to-world-of-warcraft-forever"
   - title: "Blizzard: World of Warcraft: Forever Goes Live Globally November 4!"
     url: "https://news.blizzard.com/en-us/article/24315820/world-of-warcraft-forever-goes-live-globally-november-4"
   - title: "NVIDIA: World of Warcraft: Forever Game Ready Driver"
@@ -31,6 +33,16 @@ sources:
 | Europe (CET) | 12:00 a.m., Nov 5 |
 | Korea (KST) | 8:00 a.m., Nov 5 |
 | Australia/NZ (AEDT) | 10:00 a.m., Nov 5 |
+
+## How to play
+
+According to [Blizzard's starter guide](https://news.blizzard.com/en-us/article/24315280/new-players-starter-guide-welcome-to-world-of-warcraft-forever), *Forever* runs on **Windows and Mac**. You need:
+
+- **A Battle.net account.**
+- **An active World of Warcraft subscription or Game Time.** *Forever* is included with either one, and there's no separate box to buy.
+- **The Battle.net desktop app.** Install World of Warcraft, then choose *World of Warcraft: Forever* from the game version list.
+
+The game is built for keyboard and mouse. Controller support is available in beta.
 
 ## What's in it
 

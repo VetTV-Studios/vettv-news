@@ -11,7 +11,7 @@ tags: ["nvidia", "drivers", "dlss", "world-of-warcraft"]
 platforms: ["Windows"]
 trending: true
 draft: false
-cover: "covers/nvidia-game-ready-driver-621-14-wow-forever-dlss-5.jpg"
+cover: "covers/nvidia-game-ready-driver-621-14-wow-forever-dlss-5-v2.jpg"
 sources:
   - title: "NVIDIA: World of Warcraft: Forever GeForce & RTX Spark Game Ready Driver Released"
     url: "https://www.nvidia.com/en-us/geforce/news/world-of-warcraft-forever-geforce-rtx-spark-game-ready-driver/"
