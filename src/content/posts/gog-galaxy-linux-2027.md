@@ -41,4 +41,4 @@ GOG hasn't said which Linux distributions will be supported, whether there will 
 
 GamingOnLinux (secondary) reported in July that GOG had hired a Linux specialist and was "actively exploring the best way to approach Linux support for GOG GALAXY," according to joint CEO Krzysztof Papliński. Until now, GOG has offered Linux game downloads through its website but no Linux version of Galaxy.
 
-*Opinion:* with Steam native on Linux and the Epic Games Launcher already testing a Linux build, an official GOG Galaxy would mean all three major PC storefronts have a Linux client. That's worth watching for SteamOS and handheld owners, but the details that matter (packaging, Steam Deck support, an actual date) are still unannounced.
+*Opinion:* an official Linux client would give GOG its own launcher alongside Steam on Linux. That's worth watching for SteamOS and handheld owners, but the details that matter (packaging, Steam Deck support, an actual date) are still unannounced.
