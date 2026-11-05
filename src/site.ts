@@ -9,7 +9,7 @@ export const SOCIALS = [
 ];
 // Primary sections (nav order). Videos is a nav-only link to /videos/.
 export const CATS: Record<string, string> = {
-  'news': 'News', 'handhelds': 'Handhelds', 'gaming': 'Gaming', 'windows': 'Windows', 'linux-steamos': 'Linux & SteamOS',
+  'news': 'News', 'national': 'National', 'handhelds': 'Handhelds', 'gaming': 'Gaming', 'windows': 'Windows', 'linux-steamos': 'Linux & SteamOS',
   'macos': 'macOS', 'open-nt': 'Open NT', 'deals': 'Deals', 'projects': 'Projects',
 };
 export const TYPE_LABEL: Record<string, string> = { news: 'News', opinion: 'Opinion', guide: 'Guide', review: 'Review', deal: 'Deal' };
@@ -24,6 +24,7 @@ export const sortPosts = <T extends P>(p: T[]) => p.sort((a, b) =>
 export const readMins = (body = '') => Math.max(1, Math.round(body.split(/\s+/).length / 230));
 export const CAT_DESC: Record<string, string> = {
   'news': 'Everything we publish, newest first: gaming, handhelds, Windows, Linux & SteamOS, macOS and more.',
+  'national': 'US national news: politics, policy, courts and the economy, plus the stories that hit games and tech.',
   'handhelds': 'Steam Deck, ROG Ally, Legion Go, Xbox Ally, Steam Frame and Steam Machine: hardware, drivers, tools and tweaks.',
   'gaming': 'Game Pass, Steam and Epic releases, cloud gaming, retro and emulation.',
   'windows': 'Windows 11, PC gaming and Xbox on PC.',

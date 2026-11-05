@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro'; import Card from '../components/Card.astro';
-import { CATS, CAT_DESC, sortPosts } from '../site';
+import { CATS, CAT_DESC, sortPosts, url } from '../site';
 export async function getStaticPaths() {
   const all = await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1');
   return Object.keys(CATS).map(category => ({ params: { category }, props: { posts: sortPosts(category === 'news' ? all : all.filter(p => p.data.category === category)) } }));
@@ -11,5 +11,5 @@ const { category } = Astro.params; const { posts } = Astro.props;
 <Base title={CATS[category]} description={CAT_DESC[category]} active={category}>
   <header class="page-head"><p class="kicker">Section</p><h1 class="page-h">{CATS[category]}</h1><p class="cat-desc">{CAT_DESC[category]}</p>{category === 'open-nt' && <p class="disclosure"><em>Disclosure: VetTV develops VetTV Retro OS, a fork of ReactOS that is still in development.</em></p>}
   <p class="muted stat">{posts.length} {posts.length === 1 ? 'story' : 'stories'}</p></header>
-  {posts.length ? <section class="grid">{posts.map((p, i) => <Card post={p} big={i === 0} />)}</section> : <p class="muted">No posts yet. Coming soon.</p>}
+  {posts.length ? <section class="grid">{posts.map((p, i) => <Card post={p} big={i === 0} />)}</section> : <div class="empty-state"><p class="empty-kick">Nothing here yet</p><h2>{CATS[category]} stories are on the way</h2><p>We haven't published in this section yet. In the meantime, catch up on the latest from across VetTV News.</p><a class="empty-btn" href={url('news')}>Browse all news</a></div>}
 </Base>
