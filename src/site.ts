@@ -9,7 +9,7 @@ export const SOCIALS = [
 ];
 // Primary sections (nav order). Videos is a nav-only link to /videos/.
 export const CATS: Record<string, string> = {
-  'news': 'News', 'national': 'National', 'handhelds': 'Handhelds', 'gaming': 'Gaming', 'windows': 'Windows', 'linux-steamos': 'Linux & SteamOS',
+  'news': 'News', 'national': 'National', 'handhelds': 'Handhelds', 'gaming': 'Gaming', 'tech': 'Tech', 'windows': 'Windows', 'linux-steamos': 'Linux & SteamOS',
   'macos': 'macOS', 'open-nt': 'Open NT', 'deals': 'Deals', 'projects': 'Projects',
 };
 export const TYPE_LABEL: Record<string, string> = { news: 'News', opinion: 'Opinion', guide: 'Guide', review: 'Review', deal: 'Deal' };
@@ -27,6 +27,7 @@ export const CAT_DESC: Record<string, string> = {
   'national': 'US national news: politics, policy, courts and the economy, plus the stories that hit games and tech.',
   'handhelds': 'Steam Deck, ROG Ally, Legion Go, Xbox Ally, Steam Frame and Steam Machine: hardware, drivers, tools and tweaks.',
   'gaming': 'Game Pass, Steam and Epic releases, cloud gaming, retro and emulation.',
+  'tech': 'Platforms, creator tools, AI, apps and the tech business behind what we watch and play.',
   'windows': 'Windows 11, PC gaming and Xbox on PC.',
   'linux-steamos': 'SteamOS, Bazzite, Proton and Decky: updates, betas, compatibility and the plugins worth installing.',
   'macos': 'Gaming and tinkering on the Mac: macOS updates, ports, OpenCore Legacy Patcher and Hackintosh.',
