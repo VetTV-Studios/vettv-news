@@ -1,7 +1,7 @@
 ---
 title: "Assassin's Creed Valhalla's Free 'Most Requested Update' Adds New Game+ and PS5 Pro PSSR Upgrades"
-description: "Live November 5 across consoles and PC: New Game+, Mithril, Enhanced Progression Mode, and upgraded PSSR on PS5 Pro. PlayStation highlighted the free update on X today"
-summary: "Live November 5 across consoles and PC: New Game+, Mithril, Enhanced Progression Mode, and upgraded PSSR on PS5 Pro. PlayStation highlighted the free update on X today"
+description: "Live November 5 across consoles and PC: New Game+, Mithril, Extended Progression Mode, and upgraded PSSR on PS5 Pro. PlayStation and Ubisoft highlighted the free update on X today"
+summary: "Live November 5 across consoles and PC: New Game+, Mithril, Extended Progression Mode, and upgraded PSSR on PS5 Pro. PlayStation and Ubisoft highlighted the free update on X today"
 pubDate: 2026-11-05
 publishedAt: 2026-11-05T14:57:23-06:00
 author: "Vet, VetTV Studios"
@@ -13,6 +13,8 @@ trending: false
 draft: false
 cover: "covers/assassins-creed-valhalla-1-8-0-most-requested-update-new-game-plus.png"
 sources:
+  - title: "Ubisoft on X"
+    url: "https://x.com/Ubisoft/status/2118342749673951261"
   - title: "PlayStation on X"
     url: "https://x.com/PlayStation/status/2118342795983282480"
   - title: "PlayStation.Blog: Valhalla update / PSSR"
@@ -27,7 +29,9 @@ sources:
     url: "https://www.thegamer.com/assassins-creed-valhalla-new-game-plus-update/"
 source: "Article Desk: assassins-creed-valhalla-1-8-0-most-requested-update-new-game-plus.md"
 ---
-Assassin's Creed Valhalla's free **"The Most Requested Update"** is live as of November 5. [PlayStation's official account](https://x.com/PlayStation/status/2118342795983282480) posted that the update includes upgraded PSSR for PS5 Pro, New Game Plus, Enhanced Progression Mode "and more," linking the [PlayStation Blog](https://blog.playstation.com/2026/11/05/assassins-creed-valhalla-new-update-brings-new-game-upgraded-pssr-support-for-ps5-pro-today/).
+Assassin's Creed Valhalla's free **"The Most Requested Update"** is live as of November 5. [PlayStation's official account](https://x.com/PlayStation/status/2118342795983282480) posted that the update includes upgraded PSSR for PS5 Pro, New Game Plus, Extended Progression Mode "and more," linking the [PlayStation Blog](https://blog.playstation.com/2026/11/05/assassins-creed-valhalla-new-update-brings-new-game-upgraded-pssr-support-for-ps5-pro-today/).
+
+Ubisoft's own account [posted](https://x.com/Ubisoft/status/2118342749673951261) the same day that "The Most Requested Update is now available for free," citing New Game+, Extended Progression Mode, and PS5 Pro optimization.
 
 Xbox Wire, in a post by Ubisoft, [confirms](https://news.xbox.com/en-us/2026/11/05/assassins-creed-valhalla-the-most-requested-update/) the same free update on Xbox Series X|S and Xbox One. Ubisoft's German [press room](https://newsroom.ubisoft-press.com/assassins-creed-valhalla-kostenloses-update-mit-new-game-neuen-inhalten-erweitertem-fortschrittsmodus-und-weiteren-neuerungen-ab-sofort-verfugbar) says it is available on PlayStation 5, PlayStation 4, Xbox Series X|S, Xbox One and PC (Ubisoft Store, Steam and Epic Games Store). Secondary outlets publishing Ubisoft's notes call it title update **1.8.0**.
 
@@ -35,7 +39,7 @@ Xbox Wire, in a post by Ubisoft, [confirms](https://news.xbox.com/en-us/2026/11/
 
 New Game+ unlocks after the **Holy Day** quest, the last quest in Hamtunscire (before the true ending). Each NG+ run gets progressively harder. In NG+, receiving gear or interacting with a Book of Knowledge you already own grants **Mithril**, a new resource also sold in Niflheim and Mastery / River Raid shops. Looting Carbon, Nickel or Tungsten Wealth Chests instead yields **Platinum** (previously Dawn of Ragnarök-only), so Divine quality upgrades are available without that DLC. Divine Gear's max upgrade level rises from **13 to 27**.
 
-**Enhanced Progression Mode** (Xbox Wire) makes gear upgrades, runes and masteries contribute to overall power. A **Stash** in Ravensthorpe stores gear and runes. The Rune Forge can upgrade runes for silver to a new **Superior** tier, with **more than 300** engravable runes added. Two new achievements are included (PlayStation Blog).
+**Extended Progression Mode** (Ubisoft and Xbox Wire; PlayStation's post called it Enhanced Progression Mode) makes gear upgrades, runes and masteries contribute to overall power. A **Stash** in Ravensthorpe stores gear and runes. The Rune Forge can upgrade runes for silver to a new **Superior** tier, with **more than 300** engravable runes added. Two new achievements are included (PlayStation Blog).
 
 ## PlayStation 5 Pro: upgraded PSSR
 
