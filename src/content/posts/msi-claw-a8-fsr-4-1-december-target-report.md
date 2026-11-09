@@ -33,4 +33,4 @@ Before this can be upgraded from an attributed report to a directly confirmed MS
 
 No driver version or exact release date is confirmed here. Comparative claims about other handhelds, broad AMD driver-support rules, and promised performance gains are omitted because they are not necessary to report the attributed target.
 
-MSI's original statement couldn't be located; the December target is OverClock3D's report and hasn't been independently confirmed. Do not recast the headline as “MSI confirms” unless the underlying statement is verified.
+MSI's original statement couldn't be located; the December target is OverClock3D's report and hasn't been independently confirmed.
