@@ -1,5 +1,5 @@
 ---
-title: "Square Enix Teases New Dragon Quest Mobile RPG; Trailer Nov 10"
+title: "Square Enix Teases New Dragon Quest Mobile RPG; Trailer Is Out"
 description: "A new Dragon Quest RPG for iOS and Android got its announcement trailer at 8:00 p.m. JST on November 10; no global release date is confirmed."
 summary: "A new Dragon Quest RPG for iOS and Android got its announcement trailer at 8:00 p.m. JST on November 10; no global release date is confirmed."
 pubDate: 2026-11-09
