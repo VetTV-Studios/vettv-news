@@ -21,6 +21,7 @@ type P = { id: string; data: { pubDate: Date; publishedAt?: Date; order?: number
 export const sortPosts = <T extends P>(p: T[]) => p.sort((a, b) =>
   (+b.data.pubDate - +a.data.pubDate) || ((b.data.order ?? 0) - (a.data.order ?? 0)) ||
   ((+(b.data.publishedAt ?? 0)) - (+(a.data.publishedAt ?? 0))) || a.id.localeCompare(b.id));
+export const publishedOn = (d: { publishedAt?: Date; pubDate: Date }) => d.publishedAt ?? d.pubDate;
 export const readMins = (body = '') => Math.max(1, Math.round(body.split(/\s+/).length / 230));
 export const CAT_DESC: Record<string, string> = {
   'news': 'Everything we publish, newest first: gaming, handhelds, Windows, Linux & SteamOS, macOS and more.',
