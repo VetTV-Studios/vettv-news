@@ -1,0 +1,15 @@
+name: Scheduled rebuild
+on:
+  schedule:
+    # 11:00 UTC = 5:00 AM CT (CST)
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+permissions: {}
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: curl -fsS -o /dev/null -X POST "$VERCEL_DEPLOY_HOOK"
