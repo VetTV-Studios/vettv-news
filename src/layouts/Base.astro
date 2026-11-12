@@ -29,6 +29,7 @@ const og = new URL(asset(image || 'brand/og-default-1200x630.png'), Astro.site);
 <meta property="og:url" content={canonical} /><meta property="og:image" content={og} />
 <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:image" content={og} />
 <meta name="theme-color" content="#14061f" />
+<script is:inline async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 <slot name="head" />
 </head>
 <body>
@@ -62,6 +63,7 @@ const og = new URL(asset(image || 'brand/og-default-1200x630.png'), Astro.site);
       <li><a href={asset('rss.xml')} aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="18.5" r="2.2" fill="currentColor"/><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></a></li>
     </ul>
     {FOOT.map(([h, links]) => <nav class="foot-grp" aria-label={h}><h2>{h}</h2><ul>{links.map(([l, p]) => <li><a href={p.startsWith('http') ? p : url(p)}>{l}</a></li>)}</ul></nav>)}
+    <div class="preferred-source"><div google-add-preferred-source-btn></div></div>
     <p class="foot-copy"><img src={asset('art/watermark_150x150.png')} alt="" width="28" height="28" />© {new Date().getFullYear()} VetTV Studios · Independent coverage. Not affiliated with Valve, ASUS, Lenovo, Microsoft, Apple or SteamDeckHQ.</p>
   </div>
 </footer>

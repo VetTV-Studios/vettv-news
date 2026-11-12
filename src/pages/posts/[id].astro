@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro'; import Card from '../../components/Card.astro'; import Subscribe from '../../components/Subscribe.astro'; import BotsCard from '../../components/BotsCard.astro';
-import { CATS, TYPE_LABEL, url, asset, fmt, SITE, sortPosts, readMins } from '../../site';
+import { CATS, TYPE_LABEL, url, asset, fmt, SITE, sortPosts, readMins, publishedOn } from '../../site';
 export async function getStaticPaths() { return (await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1')).map(post => ({ params: { id: post.id }, props: { post } })); }
 const { post } = Astro.props; const d = post.data; const { Content } = await render(post);
 const all = sortPosts(await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1')).filter(p => p.id !== post.id);
@@ -9,7 +9,24 @@ const related = [...all.filter(p => p.data.category === d.category), ...all.filt
 const more = all.filter(p => !related.includes(p)).slice(0, 3);
 const canon = new URL(Astro.url.pathname, Astro.site).href; const enc = encodeURIComponent;
 const t = d.type !== 'news' ? d.type : '';
-const ld = { '@context': 'https://schema.org', '@type': d.type === 'opinion' ? 'OpinionNewsArticle' : d.type === 'review' ? 'Review' : 'NewsArticle', headline: d.title, description: d.description, datePublished: d.pubDate.toISOString(), articleSection: CATS[d.category], keywords: d.tags.join(', '), author: { '@type': 'Person', name: d.author }, publisher: { '@type': 'Organization', name: SITE.name }, image: d.cover ? [new URL(asset(d.cover), Astro.site).href] : undefined, citation: d.sources.length ? d.sources.map(s => ({ '@type': 'CreativeWork', name: s.title, url: s.url })) : undefined };
+const published = publishedOn(d);
+const logoUrl = new URL(asset('favicon-512.png'), Astro.site).href;
+const authorLd = { '@type': 'Person', name: /^Vet\b/.test(d.author) ? 'Vet' : d.author, affiliation: { '@type': 'Organization', name: 'VetTV Studios' } };
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': d.type === 'opinion' ? 'OpinionNewsArticle' : d.type === 'review' ? 'Review' : 'NewsArticle',
+  headline: d.title,
+  description: d.description,
+  datePublished: published.toISOString(),
+  dateModified: published.toISOString(),
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canon },
+  articleSection: CATS[d.category],
+  keywords: d.tags.join(', '),
+  author: authorLd,
+  publisher: { '@type': 'Organization', name: 'VetTV News', legalName: 'VetTV Studios', logo: { '@type': 'ImageObject', url: logoUrl } },
+  image: d.cover ? new URL(asset(d.cover), Astro.site).href : undefined,
+  citation: d.sources.length ? d.sources.map(s => ({ '@type': 'CreativeWork', name: s.title, url: s.url })) : undefined,
+};
 ---
 <Base title={d.title} seoTitle={d.seoTitle} description={d.description} image={d.cover} type="article" active={d.category}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(ld)} />
@@ -33,6 +50,7 @@ const ld = { '@context': 'https://schema.org', '@type': d.type === 'opinion' ? '
     <div class="prose"><Content /></div>
     {d.sources.length > 0 && <section class="sources" aria-labelledby="sources-h"><h2 id="sources-h">Sources</h2><ol>{d.sources.map(s => <li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a> <span class="src-host">{new URL(s.url).hostname.replace(/^www\./, '')}</span></li>)}</ol></section>}
     <p class="tags">{d.tags.map(t => <a class="tag" href={url(`tags/${t}`)}>#{t}</a>)}</p>
+    <div class="preferred-source"><div google-add-preferred-source-btn></div></div>
   </article>
   <aside class="rail post-rail" data-pagefind-ignore>
     {related.length > 0 && <div class="rail-block"><h2 class="rail-title">Related</h2>{related.map(p => <Card post={p} variant="compact" />)}</div>}
