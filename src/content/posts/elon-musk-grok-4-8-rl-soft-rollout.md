@@ -1,7 +1,7 @@
 ---
-title: "Musk Says Grok 4.8 Pretraining Is Done and a Soft Rollout Comes This Week"
-description: "In Nov 10 posts, Musk said xAI rewrote its RL and inference stack in C/C++, 4.8 is in RL, and Grok 5 may pass Opus 5.5 in two or three months."
-summary: "In Nov 10 posts, Musk said xAI rewrote its RL and inference stack in C/C++, 4.8 is in RL, and Grok 5 may pass Opus 5.5 in two or three months."
+title: "Musk Says Grok 4.8 Has Not Rolled Out for General Use, Only Behind-the-Scenes Trials"
+description: "On Nov 17, Musk said Grok 4.8 has not rolled out for general use yet, just some trials behind the scenes, after a Nov 10 post said xAI would do a soft rollout to Bot users later that week."
+summary: "On Nov 17, Musk said Grok 4.8 has not rolled out for general use yet, just some trials behind the scenes, after a Nov 10 post said xAI would do a soft rollout to Bot users later that week."
 pubDate: 2026-11-11
 publishedAt: 2026-11-11T10:34:59-06:00
 author: "Vet, VetTV Studios"
@@ -17,9 +17,15 @@ sources:
     url: "https://x.com/elonmusk/status/2120088070443655190"
   - title: "Elon Musk, Nov 10, 4:22 a.m. CT: Grok 4.8 vs Opus 5.5 and Grok 5"
     url: "https://x.com/elonmusk/status/2120099798078656909"
+  - title: "Elon Musk, Nov 17, 11:56 a.m. CT: Grok 4.8 has not rolled out for general use yet"
+    url: "https://x.com/elonmusk/status/2122750790708154666"
 source: "Article Desk: elon-musk-grok-4-8-rl-soft-rollout.md"
 ---
-Elon Musk posted a Grok 4.8 status update on **November 10** at **2026-11-10 09:35:59 UTC** (**3:35 a.m. CT**). There is **no accompanying xAI blog post or published benchmark suite** for this update. Every claim below is what Musk said.
+**Editor's note, Nov. 18, 2026:** This article was first published on Nov. 11. Its headline said a Grok 4.8 "soft rollout comes this week," based on Elon Musk's Nov. 10 statement that xAI would "do a soft rollout to Bot users later this week and see how it goes." On Nov. 17 at 11:56 a.m. CT, Musk wrote that "Grok 4.8 has not rolled out for general use yet, just some trials behind the scenes." The headline, summary and this note have been updated to reflect that later statement. The Nov. 10 posts are quoted below as they were written.
+
+On **November 17** at **2026-11-17 17:56:41 UTC** (**11:56 a.m. CT**), Elon Musk [wrote](https://x.com/elonmusk/status/2122750790708154666), in a reply, that "Grok 4.8 has not rolled out for general use yet, just some trials behind the scenes." There is still **no accompanying xAI blog post or published benchmark suite** for Grok 4.8.
+
+Elon Musk posted a Grok 4.8 status update on **November 10** at **2026-11-10 09:35:59 UTC** (**3:35 a.m. CT**). Every claim below is what Musk said then.
 
 Replying to a question about when to expect Grok 4.8, Musk wrote:
 
