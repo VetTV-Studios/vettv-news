@@ -21,4 +21,4 @@ VetTV develops its own software, including VetTV Retro OS, a fork of ReactOS tha
 VetTV uses AI-assisted tools for research and drafting. Every article is reviewed and approved by Vet before it's published.
 
 ## Corrections
-If we get something wrong, we fix it and note the correction in the article. Send corrections to [Vetgaming1982@outlook.com](mailto:Vetgaming1982@outlook.com).
+If we get something wrong, we fix it and note the correction in the article. Send corrections to [vet@vettvstudios.com](mailto:vet@vettvstudios.com).

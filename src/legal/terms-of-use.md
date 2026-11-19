@@ -26,4 +26,4 @@ To the extent the law allows, VetTV Studios isn't liable for losses from using t
 We may update these terms. The date above shows the latest version.
 
 ## Contact
-[Vetgaming1982@outlook.com](mailto:Vetgaming1982@outlook.com)
+[vet@vettvstudios.com](mailto:vet@vettvstudios.com)
