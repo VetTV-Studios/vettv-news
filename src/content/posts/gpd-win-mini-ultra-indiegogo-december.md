@@ -41,7 +41,7 @@ The [Indiegogo campaign preview](https://www.indiegogo.com/en/projects/gpdhk/gpd
 
 GPD also has a [product page](https://www.gpd.hk/gpdwinminiultra) up for the device.
 
-## What comes from reports, not GPD
+## What outlets reported first
 
 Outlets reported several more details first, and GPD's own product page now lists them. Notebookcheck says the WIN Mini Ultra will come with **32GB or 64GB** of RAM and a **56Wh** battery, and refers to the chip's integrated graphics as **Arc B390**. The Indiegogo preview we saw shows only the 32GB configuration. In an [earlier report](https://www.notebookcheck.net/New-GPD-Win-Mini-Ultra-previewed-before-release-with-VRR-display-and-Intel-Arc-B390-graphics.1448794.0.html) on November 12, Notebookcheck cited a leak putting the device at 182.5 x 133 x 30 mm and 845 g. GPD's product page now lists 32GB or 64GB of LPDDR5x, Arc B390 graphics, a 56Wh battery, 182.5 x 133 x 30 mm and 845 g, matching those reports. The Indiegogo preview still shows only the 32GB model with the Arc G3 Extreme name.
 
