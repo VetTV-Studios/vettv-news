@@ -1,0 +1,13 @@
+---
+// There is no `ai` section in the content schema. This page filters posts by AI tags
+// and does not replace /tech/ or any existing URL.
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import StoryIndex from '../components/StoryIndex.astro';
+import { isAiPost, sortPosts } from '../site';
+const description = 'Models, assistants, and the companies shipping them: Grok, Claude, Muse, and the rest of the AI tools VetTV News covers.';
+const posts = sortPosts((await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1')).filter((p) => isAiPost(p.data.tags)));
+---
+<Base title="AI" description={description} active="ai">
+  <StoryIndex kicker="Topic" title="AI" description={description} posts={posts} empty="AI stories are on the way" />
+</Base>

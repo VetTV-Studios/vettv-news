@@ -1,0 +1,26 @@
+---
+import Card from './Card.astro';
+import { url } from '../site';
+const { kicker = 'Section', title, description = '', posts, disclosure = '', empty = 'Nothing here yet.' } = Astro.props;
+const [lead, ...rest] = posts;
+---
+<header class="page-head">
+  <p class="kicker">{kicker}</p>
+  <h1 class="page-h">{title}</h1>
+  {description && <p class="cat-desc">{description}</p>}
+  {disclosure && <p class="disclosure"><em>{disclosure}</em></p>}
+  <p class="muted stat">{posts.length} {posts.length === 1 ? 'story' : 'stories'}</p>
+</header>
+{posts.length ? (
+  <>
+    <Card post={lead} variant="lead" />
+    {rest.length > 0 && <div class="river">{rest.map((p) => <Card post={p} variant="river" />)}</div>}
+  </>
+) : (
+  <div class="empty-state">
+    <p class="empty-kick">{kicker}</p>
+    <h2>{empty}</h2>
+    <p>In the meantime, catch up on the latest from across VetTV News.</p>
+    <a class="empty-btn" href={url('news')}>Browse all news</a>
+  </div>
+)}
