@@ -48,7 +48,7 @@ h1, h2, h3, .page-h { font-family: var(--serif); font-weight: 650; letter-spacin
 .drop { position: relative; }
 .drop > button::after { content: "▾"; font-size: .65rem; margin-left: 4px; }
 .drop-menu { display: none; position: absolute; top: 100%; left: 0; min-width: 220px; background: #fff; border: 1px solid var(--line); box-shadow: 0 16px 40px #00000018; padding: 6px; z-index: 50; }
-.drop.open > .drop-menu, .drop:focus-within > .drop-menu { display: block; }
+.drop.open > .drop-menu { display: block; }
 .drop-menu a { display: block; padding: 8px 12px; color: var(--ink); text-decoration: none; font-weight: 650; font-size: .95rem; }
 .drop-menu a:hover, .drop-menu a.on { background: var(--bg); color: var(--link); }
 .qs { margin-left: auto; }

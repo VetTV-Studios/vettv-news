@@ -4,6 +4,7 @@
 import { Resvg } from '@resvg/resvg-js';
 import fs from 'fs';
 import path from 'path';
+import { coverPath } from '../src/lib/cover-file.mjs';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const postsDir = path.join(root, 'src/content/posts');
@@ -97,13 +98,7 @@ const card = ({ id, title, category }) => {
 </svg>`;
 };
 
-const needsCard = (cover) => {
-  if (!cover) return true;
-  const rel = cover.replace(/^\//, '');
-  if (!fs.existsSync(path.join(root, 'public', rel))) return true;
-  const base = path.basename(rel);
-  return placeholders.has(base);
-};
+const needsCard = (id, cover) => coverPath(id, cover, root, placeholders).startsWith('covers/generated/');
 
 fs.mkdirSync(outDir, { recursive: true });
 const font = {
@@ -122,7 +117,7 @@ for (const file of fs.readdirSync(postsDir).filter((f) => f.endsWith('.md'))) {
   const raw = fs.readFileSync(path.join(postsDir, file), 'utf8');
   const fm = raw.split('---')[1] || '';
   const cover = field(fm, 'cover');
-  if (!needsCard(cover)) { kept++; continue; }
+  if (!needsCard(id, cover)) { kept++; continue; }
   const svg = card({ id, title: field(fm, 'title'), category: field(fm, 'category') });
   const png = new Resvg(svg, { font, fitTo: { mode: 'width', value: 1200 } }).render().asPng();
   fs.writeFileSync(path.join(outDir, `${id}.png`), png);

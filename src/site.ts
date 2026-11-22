@@ -1,4 +1,9 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import placeholderCovers from './data/placeholder-covers.json';
+import { coverPath } from './lib/cover-file.mjs';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 export const SITE = { name: 'VetTV News', tagline: 'Gaming, tech and news: handheld PCs, Windows, Linux & SteamOS, macOS, retro and more', youtube: 'https://www.youtube.com/@VetTVHandheld', email: 'vet@vettvstudios.com' };
 // Official accounts (given by Vet, Oct 27 2026). Icons are simple generic glyphs.
@@ -39,12 +44,9 @@ export const AI_TAGS = ['ai', 'anthropic', 'grok', 'claude', 'muse', 'xai', 'gro
 const AI_TAG_SET = new Set<string>(AI_TAGS);
 export const isAiPost = (tags: string[]) => tags.some((t) => AI_TAG_SET.has(t));
 const PLACEHOLDER_COVERS = new Set<string>(placeholderCovers as string[]);
-// Real cover files stay. The shared concentric-ring template is replaced by a generated card.
-export const coverFile = (post: { id: string; data: { cover?: string } }) => {
-  const c = post.data.cover?.replace(/^\//, '');
-  if (c && !PLACEHOLDER_COVERS.has(c.split('/').pop() || '')) return c;
-  return `covers/generated/${post.id}.png`;
-};
+// Real cover files stay. A missing file or the shared ring template uses the generated card.
+export const coverFile = (post: { id: string; data: { cover?: string } }) =>
+  coverPath(post.id, post.data.cover, root, PLACEHOLDER_COVERS);
 // No analytics. Most read = up to three editor `trending` picks, then the newest stories.
 export const mostRead = <T extends { id: string; data: { trending?: boolean; sample?: boolean } }>(posts: T[], exclude?: string, limit = 6) => {
   const pool = posts.filter((p) => p.id !== exclude && !p.data.sample);
