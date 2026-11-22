@@ -1,7 +1,17 @@
 ---
-import { getCollection } from 'astro:content'; import Base from '../../layouts/Base.astro'; import Card from '../../components/Card.astro'; import { sortPosts } from '../../site';
-export async function getStaticPaths() { const all = await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1'); const tags = [...new Set(all.flatMap(p => p.data.tags))];
-  return tags.map(tag => ({ params: { tag }, props: { posts: sortPosts(all.filter(p => p.data.tags.includes(tag))) } })); }
-const { tag } = Astro.params; const { posts } = Astro.props;
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import StoryIndex from '../../components/StoryIndex.astro';
+import { sortPosts } from '../../site';
+export async function getStaticPaths() {
+  const all = await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1');
+  const tags = [...new Set(all.flatMap((p) => p.data.tags))];
+  return tags.map((tag) => ({ params: { tag }, props: { posts: sortPosts(all.filter((p) => p.data.tags.includes(tag))) } }));
+}
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const description = `Stories tagged #${tag}.`;
 ---
-<Base title={`#${tag}`} active="tags"><h1 class="page-h">#{tag}</h1><section class="grid">{posts.map(p => <Card post={p} />)}</section></Base>
+<Base title={`#${tag}`} description={description} active="tags">
+  <StoryIndex kicker="Tag" title={`#${tag}`} description={description} posts={posts} />
+</Base>

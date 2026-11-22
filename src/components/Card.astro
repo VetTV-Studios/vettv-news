@@ -1,22 +1,40 @@
 ---
-// Variants: 'std' (grid tile, badge over art), 'big' (lead tile with excerpt), 'compact' (thumb + headline row), 'rank' (numbered, text only).
-import { CATS, TYPE_LABEL, url, asset, fmt } from '../site';
-const { post, big = false, variant = big ? 'big' : 'std', n } = Astro.props; const d = post.data;
-const href = url(`posts/${post.id}`); const t = d.type && d.type !== 'news' ? d.type : '';
+import { CATS, TYPE_LABEL, url, asset, fmt, coverFile } from '../site';
+const { post, variant = 'river', n } = Astro.props;
+const d = post.data;
+const href = url(`posts/${post.id}`);
+const src = asset(coverFile(post));
+const t = d.type && d.type !== 'news' ? d.type : '';
+const cat = CATS[d.category];
 ---
-{variant === 'rank' ? (
-  <article class="card-rank"><span class="rank-n">{n}</span><div><a class="kick" href={url(d.category)}>{CATS[d.category]}</a><h3><a href={href}>{d.title}</a></h3></div></article>
-) : variant === 'compact' ? (
-  <article class="card-compact"><a href={href} class="thumb">{d.cover ? <img src={asset(d.cover)} alt="" loading="lazy" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" /></div>}</a>
-    <div><div class="meta">{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}<a class="kick" href={url(d.category)}>{CATS[d.category]}</a><time>{fmt(d.pubDate)}</time></div><h3><a href={href}>{d.title}</a></h3></div></article>
-) : (
-  <article class={`card ${variant === 'big' ? 'big' : ''}`}>
-    <a href={href} class="thumb">
-      {d.cover ? <img src={asset(d.cover)} alt="" loading="lazy" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" /></div>}
-      <span class="badges"><span class="pill">{CATS[d.category]}</span>{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}{d.sample && <span class="pill sample">Sample</span>}</span>
+{variant === 'most' ? (
+  <li class="most-item">
+    <a href={href}>
+      <img src={src} alt="" width="1200" height="675" loading="lazy" />
+      <span>
+        <span class={`kick cat-${d.category}`}>{cat}</span>
+        <span class="most-title">{d.title}</span>
+      </span>
     </a>
-    <h3><a href={href}>{d.title}</a></h3>
-    {(variant === 'big' || Astro.props.excerpt) && <p>{d.description}</p>}
-    <div class="meta"><span class="by">{d.author}</span><time>{fmt(d.pubDate)}</time></div>
+  </li>
+) : variant === 'lead' ? (
+  <article class="section-lead">
+    <a class="section-lead-media" href={href}><img src={src} alt="" width="1200" height="675" /></a>
+    <div>
+      <div class="meta"><a class={`kick cat-${d.category}`} href={url(d.category)}>{cat}</a>{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}{d.sample && <span class="pill sample">Sample</span>}</div>
+      <h2><a href={href}>{d.title}</a></h2>
+      <p>{d.description}</p>
+      <div class="meta"><span class="by">{d.author}</span><time datetime={d.pubDate.toISOString()}>{fmt(d.pubDate)}</time></div>
+    </div>
+  </article>
+) : (
+  <article class="river-item">
+    <a class="river-media" href={href}><img src={src} alt="" width="1200" height="675" loading="lazy" /></a>
+    <div>
+      <div class="meta"><a class={`kick cat-${d.category}`} href={url(d.category)}>{cat}</a>{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}{d.sample && <span class="pill sample">Sample</span>}</div>
+      <h3><a href={href}>{d.title}</a></h3>
+      <p>{d.description}</p>
+      <div class="meta byline"><span class="by">{d.author}</span><time datetime={d.pubDate.toISOString()}>{fmt(d.pubDate)}</time>{n ? <span class="muted">#{n}</span> : null}</div>
+    </div>
   </article>
 )}

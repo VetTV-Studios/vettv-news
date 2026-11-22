@@ -1,3 +1,10 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import placeholderCovers from './data/placeholder-covers.json';
+import { coverPath } from './lib/cover-file.mjs';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
 export const SITE = { name: 'VetTV News', tagline: 'Gaming, tech and news: handheld PCs, Windows, Linux & SteamOS, macOS, retro and more', youtube: 'https://www.youtube.com/@VetTVHandheld', email: 'vet@vettvstudios.com' };
 // Official accounts (given by Vet, Oct 27 2026). Icons are simple generic glyphs.
 export const SOCIALS = [
@@ -23,6 +30,31 @@ export const sortPosts = <T extends P>(p: T[]) => p.sort((a, b) =>
   ((+(b.data.publishedAt ?? 0)) - (+(a.data.publishedAt ?? 0))) || a.id.localeCompare(b.id));
 export const publishedOn = (d: { publishedAt?: Date; pubDate: Date }) => d.publishedAt ?? d.pubDate;
 export const readMins = (body = '') => Math.max(1, Math.round(body.split(/\s+/).length / 230));
+// Top bar: six desks plus a Reviews menu and a More menu. Existing section URLs stay put.
+export const NAV_PRIMARY: [string, string][] = [
+  ['news', 'News'], ['gaming', 'Gaming'], ['tech', 'Tech'], ['ai', 'AI'], ['handhelds', 'Handhelds'],
+];
+export const NAV_MORE: [string, string][] = [
+  ['national', 'National'], ['windows', 'Windows'], ['linux-steamos', 'Linux & SteamOS'], ['macos', 'macOS'],
+  ['open-nt', 'Open NT'], ['deals', 'Deals'], ['projects', 'Projects'], ['videos', 'Videos'],
+  ['upcoming', 'Upcoming'], ['soft-launches', 'Soft Launches'], ['delistings', 'Delistings'], ['tags', 'Tags'],
+];
+// There is no `ai` section. /ai/ lists posts carrying one of these tags.
+export const AI_TAGS = ['ai', 'anthropic', 'grok', 'claude', 'muse', 'xai', 'grok-bot', 'meta-ai', 'character-ai', 'gemini', 'ai-watermarking', 'grok-voice', 'grok-imagine', 'ai-models', 'openai', 'muse-charm'] as const;
+const AI_TAG_SET = new Set<string>(AI_TAGS);
+export const isAiPost = (tags: string[]) => tags.some((t) => AI_TAG_SET.has(t));
+const PLACEHOLDER_COVERS = new Set<string>(placeholderCovers as string[]);
+// Real cover files stay. A missing file or the shared ring template uses the generated card.
+export const coverFile = (post: { id: string; data: { cover?: string } }) =>
+  coverPath(post.id, post.data.cover, root, PLACEHOLDER_COVERS);
+// No analytics. Most read = up to three editor `trending` picks, then the newest stories.
+export const mostRead = <T extends { id: string; data: { trending?: boolean; sample?: boolean } }>(posts: T[], exclude?: string, limit = 6) => {
+  const pool = posts.filter((p) => p.id !== exclude && !p.data.sample);
+  const picks = pool.filter((p) => p.data.trending).slice(0, 3);
+  const picked = new Set(picks.map((p) => p.id));
+  return [...picks, ...pool.filter((p) => !picked.has(p.id))].slice(0, limit);
+};
+
 export const CAT_DESC: Record<string, string> = {
   'news': 'Everything we publish, newest first: gaming, handhelds, Windows, Linux & SteamOS, macOS and more.',
   'national': 'US national news: politics, policy, courts and the economy, plus the stories that hit games and tech.',
