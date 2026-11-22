@@ -1,10 +1,11 @@
+import { fileURLToPath } from 'node:url';
 import { sectionFor, typeFor, SECTION_NAMES } from './sections.mjs';
 // Imports VetTV Article Desk drafts (read-only) from /workspace/articles (or m.dir) into src/content/posts.
 // Usage: node scripts/import-articles.mjs [slug ...]   (no args = all). Dates are the CT byline date.
 import fs from 'node:fs'; import path from 'node:path';
 const SRC0 = process.env.ARTICLES_DIR || '/workspace/articles';
-const OUT = new URL('../src/content/posts/', import.meta.url).pathname;
-const COV = new URL('../public/covers/', import.meta.url).pathname;
+const OUT = fileURLToPath(new URL('../src/content/posts/', import.meta.url));
+const COV = fileURLToPath(new URL('../public/covers/', import.meta.url));
 const map = {
   'steamos-3-9-2-beta-legion-go': { cat: 'news', tags: ['steamos','legion-go','beta'], cover: 'steamos-3-9-2', featured: true },
   'steamos-proton-daily-2026-10-13': { cat: 'news', tags: ['steamos','proton','steam-deck','remote-play'], cover: 'steamos-proton-daily-2026-10-13' },

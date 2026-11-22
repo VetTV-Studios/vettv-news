@@ -2,10 +2,12 @@
 // Content-type page (was a section before the Oct 2026 redesign; URL kept).
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro'; import Card from '../components/Card.astro';
-import { sortPosts } from '../site';
+import { sortPosts, url } from '../site';
 const posts = sortPosts((await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1')).filter(p => p.data.type === 'guide'));
+const [lead, ...rest] = posts;
 ---
-<Base title="Guides" description="Guides from VetTV News, across every section.">
-  <header class="page-head"><p class="kicker">Type</p><h1 class="page-h">Guides</h1><p class="cat-desc">Guides from every section.</p></header>
-  {posts.length ? <section class="grid">{posts.map((p, i) => <Card post={p} big={i === 0} />)}</section> : <p class="muted">No guides yet. Coming soon.</p>}
+<Base title="Guides" description="Step-by-step guides from VetTV News, across every section." active="guides">
+  <header class="page-head"><p class="kicker">How-to desk</p><h1 class="page-h">Guides</h1><p class="cat-desc">Setup walk-throughs, tuning help and fixes from every section.</p>
+  <p class="muted stat">{posts.length} {posts.length === 1 ? 'guide' : 'guides'}</p></header>
+  {posts.length ? <>{lead && <Card post={lead} big />}<div class="river cat-river">{rest.map(p => <Card post={p} variant="river" />)}</div></> : <div class="empty-state"><p class="empty-kick">Nothing here yet</p><h2>Guides are on the way</h2><p>No guides published yet. Browse the latest coverage instead.</p><a class="empty-btn" href={url('news')}>Browse all news</a></div>}
 </Base>

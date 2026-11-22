@@ -1,17 +1,20 @@
 ---
-import { SITE, SOCIALS, CATS, CAT_DESC, url, asset } from '../site';
+import { SITE, SOCIALS, CATS, CAT_DESC, NAV_PRIMARY, NAV_MORE, url, asset } from '../site';
 import '../styles/global.css';
 import Subscribe from '../components/Subscribe.astro';
 const { title, seoTitle, description = SITE.tagline, image, type = 'website', active = '', noindex = false } = Astro.props;
 const fullTitle = seoTitle ? `${seoTitle} | ${SITE.name}` : title ? `${title} | ${SITE.name}` : SITE.name;
 const isHome = Astro.url.pathname.replace(/\/$/, '') === import.meta.env.BASE_URL.replace(/\/$/, '');
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/Chicago' });
 const FOOT: [string, [string, string][]][] = [
-  ['Site', [...Object.entries(CATS).map(([k, v]) => [v, k] as [string, string]), ['Videos', 'videos'], ['Upcoming', 'upcoming'], ['Soft Launches', 'soft-launches'], ['Delistings', 'delistings'], ['About', 'about']]],
-  ['Channels', [['Official links', 'official-links'], ['Write to us', 'contact']]],
+  ['Sections', [...Object.entries(CATS).map(([k, v]) => [v, k] as [string, string]), ['Videos', 'videos']]],
+  ['Trackers & tools', [['Upcoming', 'upcoming'], ['Soft Launches', 'soft-launches'], ['Delistings', 'delistings'], ['Guides', 'guides'], ['Reviews', 'reviews'], ['Tags', 'tags'], ['Search', 'search']]],
+  ['About', [['About VetTV News', 'about'], ['Official links', 'official-links'], ['Write to us', 'contact'], ['Subscribe', 'subscribe']]],
   ['Legal', [['Privacy Policy', 'privacy'], ['Terms of Use', 'terms'], ['Affiliate disclosure', 'affiliate-disclosure'], ['Content disclosure', 'content-disclosure']]],
 ];
 const og = new URL(asset(image || 'brand/og-default-1200x630.png'), Astro.site);
+const moreActive = NAV_MORE.some(([k]) => k === active) || ['soft-launches', 'delistings'].includes(active);
 ---
 <!doctype html>
 <html lang="en">
@@ -33,18 +36,37 @@ const og = new URL(asset(image || 'brand/og-default-1200x630.png'), Astro.site);
 <slot name="head" />
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="util">
+  <div class="wrap util-in">
+    <span>{today} · {SITE.tagline}</span>
+    <span class="util-r">
+      <a href={url('guides')}>Guides</a><a href={url('reviews')}>Reviews</a><a href={url('upcoming')}>Upcoming</a>
+      <a href={asset('rss.xml')}>RSS</a><a class="util-sub" href={url('subscribe')}>Subscribe free</a>
+    </span>
+  </div>
+</div>
 <header class="top">
   <div class="wrap bar">
-    <a class="brand" href={url('')}><img class="brand-logo" src={asset('brand/vettv-studios-logo-transparent.svg')} alt="VetTV Studios" width="78" height="44" /><span>VetTV <b>News</b></span></a>
-    <nav class="top-links" aria-label="Content types"><a href={url('guides')}>Guides</a><a href={url('reviews')}>Reviews</a><a href={url('upcoming')}>Upcoming</a><a href={url('tags')}>Tags</a></nav>
-    <form class="qs" action={url('search')} role="search"><input name="q" type="search" placeholder="Search…" aria-label="Search" /></form>
+    <a class="brand" href={url('')} aria-label={`${SITE.name} home`}><img class="brand-logo" src={asset('brand/vettv-studios-logo-transparent.svg')} alt="VetTV Studios" width="78" height="44" /><span>VetTV <b>News</b></span></a>
+    <form class="qs" action={url('search')} role="search"><label class="sr" for="qs-in">Search stories</label><input id="qs-in" name="q" type="search" placeholder="Search stories…" /><button type="submit">Search</button></form>
+    <a class="sub-btn" href={url('subscribe')}>Subscribe</a>
     <a class="m-only m-icon m-search" href={url('search')} aria-label="Search"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></a>
     <button class="menu" aria-label="Menu" aria-controls="m-drawer" aria-expanded="false" onclick="vhnNav()">☰</button>
   </div>
-  <nav class="cats"><div class="wrap">
-    {Object.entries(CATS).map(([k, v]) => <a href={url(k)} class={active === k ? 'on' : ''}>{v}</a>)}
+  <nav class="cats" aria-label="Sections"><div class="wrap cats-in">
+    {NAV_PRIMARY.map(([k, v]) => <a href={url(k)} class={active === k ? 'on' : ''}>{v}</a>)}
+    <a href={url('guides')} class={active === 'guides' ? 'on' : ''}>Guides</a>
+    <a href={url('reviews')} class={active === 'reviews' ? 'on' : ''}>Reviews</a>
+    <details class="nav-more">
+      <summary class={moreActive ? 'on' : ''}>More <span aria-hidden="true">▾</span></summary>
+      <div class="nav-more-panel">
+        {NAV_MORE.map(([k, v]) => <a href={url(k)} class={active === k ? 'on' : ''}>{v}</a>)}
+        <a href="https://vettvstudios.com/bots" rel="noopener">Bots</a>
+      </div>
+    </details>
     <a href={url('videos')} class={`nav-vid ${active === 'videos' ? 'on' : ''}`}>Videos</a>
-    <a href={url('subscribe')} class={`c-extra nav-sub ${active === 'subscribe' ? 'on' : ''}`}>Subscribe</a><a href="https://vettvstudios.com/bots" rel="noopener" class="c-extra nav-bots">Bots</a>
+    <span class="cats-r"><a href={url('search')}>Search</a><a href={url('subscribe')} class={active === 'subscribe' ? 'on' : ''}>Subscribe</a></span>
   </div></nav>
 </header>
 <div class="m-only m-drawer" id="m-drawer" aria-label="Sections">
@@ -54,17 +76,23 @@ const og = new URL(asset(image || 'brand/og-default-1200x630.png'), Astro.site);
   <p class="m-drawer-h">Trackers</p><div class="m-drawer-links"><a href={url('upcoming')}>Upcoming</a><a href={url('soft-launches')}>Soft Launches</a><a href={url('delistings')}>Delistings</a></div>
   <div class="m-drawer-links"><a href={url('guides')}>Guides</a><a href={url('reviews')}>Reviews</a><a href={url('tags')}>Tags</a><a href={url('subscribe')}>Subscribe</a><a href={asset('rss.xml')}>RSS</a><a href={SITE.youtube}>YouTube</a></div>
 </div>
-<main class="wrap"><slot /></main>
+<main class="wrap" id="main"><slot /></main>
 <footer class="foot">
   {active !== 'subscribe' && <div class="wrap"><Subscribe id="foot-sub" compact /></div>}
   <div class="wrap foot-in">
-    <ul class="socials" aria-label="VetTV channels">
-      {SOCIALS.map(x => <li><a href={x.href} aria-label={`VetTV on ${x.name} (${x.handle})`} rel="me noopener"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={x.d} /></a></li>)}
-      <li><a href={asset('rss.xml')} aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="18.5" r="2.2" fill="currentColor"/><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></a></li>
-    </ul>
+    <div class="foot-brand">
+      <a class="brand" href={url('')}><img class="brand-logo" src={asset('brand/vettv-studios-logo-transparent.svg')} alt="VetTV Studios" width="78" height="44" loading="lazy" /><span>VetTV <b>News</b></span></a>
+      <p>Your one stop for news, tech and gaming: handheld PCs, Windows, Linux &amp; SteamOS, macOS, retro and the stories behind the platforms.</p>
+      <ul class="socials" aria-label="VetTV channels">
+        {SOCIALS.map(x => <li><a href={x.href} aria-label={`VetTV on ${x.name} (${x.handle})`} rel="me noopener"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={x.d} /></a></li>)}
+        <li><a href={asset('rss.xml')} aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="18.5" r="2.2" fill="currentColor"/><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></a></li>
+      </ul>
+    </div>
     {FOOT.map(([h, links]) => <nav class="foot-grp" aria-label={h}><h2>{h}</h2><ul>{links.map(([l, p]) => <li><a href={p.startsWith('http') ? p : url(p)}>{l}</a></li>)}</ul></nav>)}
+  </div>
+  <div class="wrap foot-base">
     <div class="preferred-source"><div google-add-preferred-source-btn></div></div>
-    <p class="foot-copy"><img src={asset('art/watermark_150x150.png')} alt="" width="28" height="28" />© {new Date().getFullYear()} VetTV Studios · Independent coverage. Not affiliated with Valve, ASUS, Lenovo, Microsoft, Apple or SteamDeckHQ.</p>
+    <p class="foot-copy"><img src={asset('art/watermark_150x150.png')} alt="" width="28" height="28" loading="lazy" />© {new Date().getFullYear()} VetTV Studios · Independent coverage. Not affiliated with Valve, ASUS, Lenovo, Microsoft, Apple or SteamDeckHQ.</p>
   </div>
 </footer>
 <nav class="m-only m-tabbar" aria-label="Mobile">
@@ -75,7 +103,7 @@ const og = new URL(asset(image || 'brand/og-default-1200x630.png'), Astro.site);
 </nav>
 <script is:inline>
   function vhnNav(){var o=document.body.classList.toggle('nav-open');document.querySelectorAll('[aria-controls="m-drawer"]').forEach(function(b){b.setAttribute('aria-expanded',o)});}
-  addEventListener('keydown',function(e){if(e.key==='Escape')document.body.classList.remove('nav-open')});
-  (function(){var c=document.querySelector('.cats .wrap'),a=c&&c.querySelector('a.on');if(a&&matchMedia('(max-width:768px)').matches)c.scrollLeft+=a.getBoundingClientRect().left-c.getBoundingClientRect().left-16;})();
+  addEventListener('keydown',function(e){if(e.key==='Escape'){document.body.classList.remove('nav-open');document.querySelectorAll('.nav-more[open]').forEach(function(d){d.removeAttribute('open')});}});
+  document.addEventListener('click',function(e){document.querySelectorAll('.nav-more[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')});});
 </script>
 </body></html>

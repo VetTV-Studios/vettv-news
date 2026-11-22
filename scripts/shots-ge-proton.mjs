@@ -1,5 +1,6 @@
+import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/'; const S = new URL('../screenshots/', import.meta.url).pathname;
+const B = 'http://localhost:4321/'; const S = fileURLToPath(new URL('../screenshots/', import.meta.url));
 const U = B + 'posts/ge-proton11-11-release/';
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 for (const [n, w] of [['ge-proton-article-desktop', 1280], ['ge-proton-article-mobile', 390]]) {

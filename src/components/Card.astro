@@ -1,22 +1,34 @@
 ---
-// Variants: 'std' (grid tile, badge over art), 'big' (lead tile with excerpt), 'compact' (thumb + headline row), 'rank' (numbered, text only).
-import { CATS, TYPE_LABEL, url, asset, fmt } from '../site';
+// Variants: 'std' (grid tile), 'big' (lead tile with excerpt), 'river' (dense thumb-left news row),
+// 'compact' (small thumb + headline), 'rank' (numbered, text only).
+import { CATS, TYPE_LABEL, url, asset, fmt, ago, publishedOn } from '../site';
 const { post, big = false, variant = big ? 'big' : 'std', n } = Astro.props; const d = post.data;
 const href = url(`posts/${post.id}`); const t = d.type && d.type !== 'news' ? d.type : '';
+const when = publishedOn(d);
 ---
 {variant === 'rank' ? (
-  <article class="card-rank"><span class="rank-n">{n}</span><div><a class="kick" href={url(d.category)}>{CATS[d.category]}</a><h3><a href={href}>{d.title}</a></h3></div></article>
+  <article class="card-rank"><span class="rank-n">{n}</span><div><a class="kick" href={url(d.category)}>{CATS[d.category]}</a><h3><a href={href}>{d.title}</a></h3><div class="meta rank-meta"><time datetime={when.toISOString()}>{ago(when)}</time></div></div></article>
+) : variant === 'river' ? (
+  <article class="card-river">
+    <a href={href} class="thumb">{d.cover ? <img src={asset(d.cover)} alt="" loading="lazy" width="320" height="180" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" loading="lazy" /></div>}</a>
+    <div class="river-copy">
+      <div class="meta"><a class="kick" href={url(d.category)}>{CATS[d.category]}</a>{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}{d.sample && <span class="pill sample">Sample</span>}</div>
+      <h3><a href={href}>{d.title}</a></h3>
+      <p>{d.description}</p>
+      <div class="meta"><span class="by">{d.author}</span><time datetime={when.toISOString()}>{ago(when)}</time></div>
+    </div>
+  </article>
 ) : variant === 'compact' ? (
-  <article class="card-compact"><a href={href} class="thumb">{d.cover ? <img src={asset(d.cover)} alt="" loading="lazy" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" /></div>}</a>
-    <div><div class="meta">{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}<a class="kick" href={url(d.category)}>{CATS[d.category]}</a><time>{fmt(d.pubDate)}</time></div><h3><a href={href}>{d.title}</a></h3></div></article>
+  <article class="card-compact"><a href={href} class="thumb">{d.cover ? <img src={asset(d.cover)} alt="" loading="lazy" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" loading="lazy" /></div>}</a>
+    <div><div class="meta">{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}<a class="kick" href={url(d.category)}>{CATS[d.category]}</a><time datetime={when.toISOString()}>{ago(when)}</time></div><h3><a href={href}>{d.title}</a></h3></div></article>
 ) : (
   <article class={`card ${variant === 'big' ? 'big' : ''}`}>
     <a href={href} class="thumb">
-      {d.cover ? <img src={asset(d.cover)} alt="" loading="lazy" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" /></div>}
+      {d.cover ? <img src={asset(d.cover)} alt="" loading="lazy" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" loading="lazy" /></div>}
       <span class="badges"><span class="pill">{CATS[d.category]}</span>{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}{d.sample && <span class="pill sample">Sample</span>}</span>
     </a>
     <h3><a href={href}>{d.title}</a></h3>
     {(variant === 'big' || Astro.props.excerpt) && <p>{d.description}</p>}
-    <div class="meta"><span class="by">{d.author}</span><time>{fmt(d.pubDate)}</time></div>
+    <div class="meta"><span class="by">{d.author}</span><time datetime={when.toISOString()}>{fmt(d.pubDate)}</time></div>
   </article>
 )}

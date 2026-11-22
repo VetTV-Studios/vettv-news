@@ -1,6 +1,7 @@
+import { fileURLToPath } from 'node:url';
 // Publish gate: fails the build while placeholder tracker rows or DRAFT pages remain. Preview: ALLOW_PLACEHOLDERS=1.
 import fs from 'fs'; import path from 'path'; 
-const root = new URL('..', import.meta.url).pathname; const hits = [];
+const root = fileURLToPath(new URL('..', import.meta.url)); const hits = [];
 for (const f of ['upcoming', 'soft-launches', 'delistings']) {
   const rows = JSON.parse(fs.readFileSync(path.join(root, 'src/data', f + '.json'), 'utf8'));
   rows.forEach((r, i) => { if (r.placeholder || /placeholder/i.test(r.title) || /example\.com/.test(r.source_url || '')) hits.push(`src/data/${f}.json row ${i + 1} (placeholder)`); });

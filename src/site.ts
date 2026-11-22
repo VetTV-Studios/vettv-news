@@ -13,6 +13,15 @@ export const CATS: Record<string, string> = {
   'macos': 'macOS', 'open-nt': 'Open NT', 'deals': 'Deals', 'projects': 'Projects',
 };
 export const TYPE_LABEL: Record<string, string> = { news: 'News', opinion: 'Opinion', guide: 'Guide', review: 'Review', deal: 'Deal' };
+// Header nav: six primary desks on the bar; the rest live under "More". Section URLs are unchanged.
+export const NAV_PRIMARY: [string, string][] = [
+  ['news', 'News'], ['national', 'National'], ['gaming', 'Gaming'], ['tech', 'Tech'], ['handhelds', 'Handhelds'], ['deals', 'Deals'],
+];
+export const NAV_MORE: [string, string][] = [
+  ['windows', 'Windows'], ['linux-steamos', 'Linux & SteamOS'], ['macos', 'macOS'], ['open-nt', 'Open NT'],
+  ['projects', 'Projects'], ['videos', 'Videos'], ['upcoming', 'Upcoming'], ['soft-launches', 'Soft Launches'],
+  ['delistings', 'Delistings'], ['guides', 'Guides'], ['reviews', 'Reviews'], ['tags', 'Tags'],
+];
 export const url = (p = '') => { const b = import.meta.env.BASE_URL.replace(/\/$/, ''); p = p.replace(/^\/|\/$/g, ''); return p ? `${b}/${p}/` : `${b}/`; };
 export const asset = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + '/' + p.replace(/^\//, '');
 export const fmt = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
@@ -23,6 +32,21 @@ export const sortPosts = <T extends P>(p: T[]) => p.sort((a, b) =>
   ((+(b.data.publishedAt ?? 0)) - (+(a.data.publishedAt ?? 0))) || a.id.localeCompare(b.id));
 export const publishedOn = (d: { publishedAt?: Date; pubDate: Date }) => d.publishedAt ?? d.pubDate;
 export const readMins = (body = '') => Math.max(1, Math.round(body.split(/\s+/).length / 230));
+// "2 hours ago" style label for fresh stories; falls back to the calendar date after two days.
+export const ago = (d: Date) => {
+  const mins = Math.max(0, Math.round((Date.now() - +d) / 60000));
+  if (mins < 60) return mins <= 1 ? 'Just now' : `${mins} minutes ago`;
+  const hrs = Math.round(mins / 60);
+  if (hrs < 48) return hrs === 1 ? '1 hour ago' : `${hrs} hours ago`;
+  return fmt(d);
+};
+// No analytics behind this site: "most read" leads with editor-flagged trending picks, then the newest stories.
+export const mostRead = <T extends { id: string; data: { trending?: boolean; sample?: boolean } }>(posts: T[], exclude?: string, limit = 6) => {
+  const pool = posts.filter((p) => p.id !== exclude && !p.data.sample);
+  const picks = pool.filter((p) => p.data.trending).slice(0, 3);
+  const picked = new Set(picks.map((p) => p.id));
+  return [...picks, ...pool.filter((p) => !picked.has(p.id))].slice(0, limit);
+};
 export const CAT_DESC: Record<string, string> = {
   'news': 'Everything we publish, newest first: gaming, handhelds, Windows, Linux & SteamOS, macOS and more.',
   'national': 'US national news: politics, policy, courts and the economy, plus the stories that hit games and tech.',

@@ -1,5 +1,6 @@
+import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/'; const S = new URL('../screenshots/', import.meta.url).pathname;
+const B = 'http://localhost:4321/'; const S = fileURLToPath(new URL('../screenshots/', import.meta.url));
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 const posts = { 'refs-block': 'windows-refs-removable-media-block-2027' };
 for (const [k, slug] of Object.entries(posts)) for (const [v, w] of [['desktop', 1280], ['mobile', 390]]) {

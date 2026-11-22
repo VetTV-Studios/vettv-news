@@ -1,5 +1,6 @@
+import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright-core';
-const B = 'http://localhost:4321/'; const S = new URL('../screenshots/', import.meta.url).pathname;
+const B = 'http://localhost:4321/'; const S = fileURLToPath(new URL('../screenshots/', import.meta.url));
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 for (const slug of (process.argv.slice(2).length ? process.argv.slice(2) : ['steam-client-beta-2026-10-26','decky-loader-v3-3-1','bazzite-stable-44-20261026','half-life-alyx-foveated-rendering-desktop'])) {
   const p = await b.newPage({ viewport: { width: 1280, height: 900 } });

@@ -1,7 +1,13 @@
 ---
-import { getCollection } from 'astro:content'; import Base from '../../layouts/Base.astro'; import Card from '../../components/Card.astro'; import { sortPosts } from '../../site';
+import { getCollection } from 'astro:content'; import Base from '../../layouts/Base.astro'; import Card from '../../components/Card.astro'; import { sortPosts, url } from '../../site';
 export async function getStaticPaths() { const all = await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1'); const tags = [...new Set(all.flatMap(p => p.data.tags))];
   return tags.map(tag => ({ params: { tag }, props: { posts: sortPosts(all.filter(p => p.data.tags.includes(tag))) } })); }
 const { tag } = Astro.params; const { posts } = Astro.props;
+const [lead, ...rest] = posts;
 ---
-<Base title={`#${tag}`} active="tags"><h1 class="page-h">#{tag}</h1><section class="grid">{posts.map(p => <Card post={p} />)}</section></Base>
+<Base title={`#${tag}`} description={`Stories tagged #${tag} on VetTV News.`} active="tags">
+  <header class="page-head"><p class="kicker">Tag</p><h1 class="page-h">#{tag}</h1>
+    <p class="muted stat">{posts.length} {posts.length === 1 ? 'story' : 'stories'} · <a href={url('tags')}>Browse all tags</a></p></header>
+  {lead && <Card post={lead} big />}
+  <div class="river cat-river">{rest.map(p => <Card post={p} variant="river" />)}</div>
+</Base>
