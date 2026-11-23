@@ -5,6 +5,8 @@ export default defineConfig({
   site: 'https://news.vettvstudios.com',
   base: '/',
   trailingSlash: 'always',
+  // Inline CSS into HTML: removes the render-blocking stylesheet request (PageSpeed FCP/LCP).
+  build: { inlineStylesheets: 'always' },
   // Renamed/merged section slugs keep working (Oct 2026 redesign). /guides/ and /reviews/ are real type pages.
   redirects: {
     '/retro-emulation-cloud': '/gaming/',

@@ -32,7 +32,6 @@ const moreActive = NAV_MORE.some(([k]) => k === active) || ['soft-launches', 'de
 <meta property="og:url" content={canonical} /><meta property="og:image" content={og} />
 <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:image" content={og} />
 <meta name="theme-color" content="#14061f" />
-<script is:inline async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 <slot name="head" />
 </head>
 <body>
@@ -105,5 +104,14 @@ const moreActive = NAV_MORE.some(([k]) => k === active) || ['soft-launches', 'de
   function vhnNav(){var o=document.body.classList.toggle('nav-open');document.querySelectorAll('[aria-controls="m-drawer"]').forEach(function(b){b.setAttribute('aria-expanded',o)});}
   addEventListener('keydown',function(e){if(e.key==='Escape'){document.body.classList.remove('nav-open');document.querySelectorAll('.nav-more[open]').forEach(function(d){d.removeAttribute('open')});}});
   document.addEventListener('click',function(e){document.querySelectorAll('.nav-more[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')});});
+</script>
+<script is:inline>
+  // Subscribe with Google powers only the "preferred source" button (footer/article end),
+  // so load it when that button nears the viewport instead of during initial page load.
+  (function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement('script');s.async=true;s.src='https://news.google.com/swg/js/v1/publisher.js';document.head.appendChild(s);}
+  var els=document.querySelectorAll('.preferred-source');if(!els.length)return;
+  if(!('IntersectionObserver' in window)){addEventListener('load',load);return;}
+  var io=new IntersectionObserver(function(es){for(var i=0;i<es.length;i++){if(es[i].isIntersecting){load();io.disconnect();break;}}},{rootMargin:'800px'});
+  els.forEach(function(el){io.observe(el);});})();
 </script>
 </body></html>

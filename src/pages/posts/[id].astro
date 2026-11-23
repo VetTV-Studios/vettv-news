@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro'; import Card from '../../components/Card.astro'; import Subscribe from '../../components/Subscribe.astro'; import BotsCard from '../../components/BotsCard.astro';
-import { CATS, TYPE_LABEL, url, asset, fmt, SITE, sortPosts, readMins, publishedOn } from '../../site';
+import { CATS, TYPE_LABEL, url, asset, coverSrc, coverSrcset, fmt, SITE, sortPosts, readMins, publishedOn } from '../../site';
 export async function getStaticPaths() { return (await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1')).map(post => ({ params: { id: post.id }, props: { post } })); }
 const { post } = Astro.props; const d = post.data; const { Content } = await render(post);
 const all = sortPosts(await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1')).filter(p => p.id !== post.id);
@@ -30,6 +30,7 @@ const ld = {
 ---
 <Base title={d.title} seoTitle={d.seoTitle} description={d.description} image={d.cover} type="article" active={d.category}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(ld)} />
+  {d.cover && <link slot="head" rel="preload" as="image" imagesrcset={coverSrcset(d.cover)} imagesizes="(max-width:860px) 100vw, 820px" fetchpriority="high" />}
   <div class="article-frame">
   <article class="post" data-pagefind-body>
     <nav class="crumbs" data-pagefind-ignore aria-label="Breadcrumb"><a href={url('')}>Home</a><span>›</span><a href={url(d.category)}>{CATS[d.category]}</a></nav>
@@ -37,7 +38,7 @@ const ld = {
     <h1>{d.title}</h1><p class="dek">{d.description}</p>
     {d.type === 'opinion' && <p class="opinion-note" data-pagefind-ignore>Opinion: this piece is the author's view, not straight news.</p>}
     <div class="byline-card" data-pagefind-ignore>
-      <img src={asset('art/profile_800x800.png')} alt="" width="44" height="44" />
+      <img src={asset('art/profile-96.webp')} alt="" width="44" height="44" />
       <div><b>By {d.author}</b><span><time datetime={d.pubDate.toISOString()}>{fmt(d.pubDate)}</time> · {readMins(post.body)} min read</span></div>
       <div class="share" aria-label="Share">
         <button type="button" onclick={`navigator.clipboard&&navigator.clipboard.writeText('${canon}');this.textContent='Copied'`}>Copy link</button>
@@ -46,7 +47,7 @@ const ld = {
         <a href={`https://www.reddit.com/submit?url=${enc(canon)}&title=${enc(d.title)}`}>Reddit</a>
       </div>
     </div>
-    {d.cover && <img class="cover" src={asset(d.cover)} alt="" />}
+    {d.cover && <img class="cover" src={coverSrc(d.cover, 1280)} srcset={coverSrcset(d.cover)} sizes="(max-width:860px) 100vw, 820px" alt="" width="1280" height="720" fetchpriority="high" />}
     <div class="prose"><Content /></div>
     {d.sources.length > 0 && <section class="sources" aria-labelledby="sources-h"><h2 id="sources-h">Sources</h2><ol>{d.sources.map(s => <li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a> <span class="src-host">{new URL(s.url).hostname.replace(/^www\./, '')}</span></li>)}</ol></section>}
     <p class="tags">{d.tags.map(t => <a class="tag" href={url(`tags/${t}`)}>#{t}</a>)}</p>

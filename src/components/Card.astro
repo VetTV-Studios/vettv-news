@@ -1,7 +1,7 @@
 ---
 // Variants: 'std' (grid tile), 'big' (lead tile with excerpt), 'river' (dense thumb-left news row),
 // 'compact' (small thumb + headline), 'rank' (numbered, text only).
-import { CATS, TYPE_LABEL, url, asset, fmt, ago, publishedOn } from '../site';
+import { CATS, TYPE_LABEL, url, asset, coverSrc, coverSrcset, fmt, ago, publishedOn } from '../site';
 const { post, big = false, variant = big ? 'big' : 'std', n } = Astro.props; const d = post.data;
 const href = url(`posts/${post.id}`); const t = d.type && d.type !== 'news' ? d.type : '';
 const when = publishedOn(d);
@@ -10,7 +10,7 @@ const when = publishedOn(d);
   <article class="card-rank"><span class="rank-n">{n}</span><div><a class="kick" href={url(d.category)}>{CATS[d.category]}</a><h3><a href={href}>{d.title}</a></h3><div class="meta rank-meta"><time datetime={when.toISOString()}>{ago(when)}</time></div></div></article>
 ) : variant === 'river' ? (
   <article class="card-river">
-    <a href={href} class="thumb">{d.cover ? <img src={asset(d.cover)} alt="" loading="lazy" width="320" height="180" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" loading="lazy" /></div>}</a>
+    <a href={href} class="thumb" aria-label={d.title}>{d.cover ? <img src={coverSrc(d.cover, 640)} srcset={coverSrcset(d.cover, [320, 640])} sizes="(max-width:700px) 120px, 250px" alt="" loading="lazy" width="320" height="180" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" loading="lazy" /></div>}</a>
     <div class="river-copy">
       <div class="meta"><a class="kick" href={url(d.category)}>{CATS[d.category]}</a>{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}{d.sample && <span class="pill sample">Sample</span>}</div>
       <h3><a href={href}>{d.title}</a></h3>
@@ -19,12 +19,12 @@ const when = publishedOn(d);
     </div>
   </article>
 ) : variant === 'compact' ? (
-  <article class="card-compact"><a href={href} class="thumb">{d.cover ? <img src={asset(d.cover)} alt="" loading="lazy" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" loading="lazy" /></div>}</a>
+  <article class="card-compact"><a href={href} class="thumb" aria-label={d.title}>{d.cover ? <img src={coverSrc(d.cover, 640)} srcset={coverSrcset(d.cover, [320, 640])} sizes="(max-width:700px) 120px, 160px" alt="" loading="lazy" width="320" height="180" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" loading="lazy" /></div>}</a>
     <div><div class="meta">{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}<a class="kick" href={url(d.category)}>{CATS[d.category]}</a><time datetime={when.toISOString()}>{ago(when)}</time></div><h3><a href={href}>{d.title}</a></h3></div></article>
 ) : (
   <article class={`card ${variant === 'big' ? 'big' : ''}`}>
     <a href={href} class="thumb">
-      {d.cover ? <img src={asset(d.cover)} alt="" loading="lazy" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" loading="lazy" /></div>}
+      {d.cover ? <img src={coverSrc(d.cover, 640)} srcset={coverSrcset(d.cover, [320, 640, 960])} sizes="(max-width:700px) 92vw, 340px" alt="" loading="lazy" width="640" height="360" /> : <div class="ph"><img src={asset('art/watermark_150x150.png')} alt="" loading="lazy" /></div>}
       <span class="badges"><span class="pill">{CATS[d.category]}</span>{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}{d.sample && <span class="pill sample">Sample</span>}</span>
     </a>
     <h3><a href={href}>{d.title}</a></h3>

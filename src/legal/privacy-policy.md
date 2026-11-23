@@ -9,7 +9,7 @@ VetTV News ("we," "us") is published by VetTV Studios. This page explains what t
 
 ## Third-party scripts on this site
 
-Every page includes Google's Subscribe with Google publisher script, [news.google.com/swg/js/v1/publisher.js](https://news.google.com/swg/js/v1/publisher.js). It powers the "preferred source" button in the footer. When that button initializes, the page also loads:
+Pages load Google's Subscribe with Google publisher script, [news.google.com/swg/js/v1/publisher.js](https://news.google.com/swg/js/v1/publisher.js), when the "preferred source" button (in the footer, and at the end of articles) nears the screen as you scroll. When that button initializes, the page also loads:
 
 - a Google frame from `news.google.com/swg/ui`
 - Subscribe with Google interface code and styles from `www.gstatic.com`
