@@ -21,9 +21,14 @@ sources:
     url: "https://www.theverge.com/tech/1039937/nvidia-ceo-jensen-huang-reinstated"
   - title: "VetTV News, Nov. 12, 2026: NVIDIA Says Jensen Huang Resigned; Colette Kress Named Interim CEO"
     url: "https://news.vettvstudios.com/posts/nvidia-jensen-huang-resigns-colette-kress-interim-ceo/"
+  - title: "NVIDIA Newsroom: Jensen Huang executive bio and official headshot (photo source)"
+    url: "https://nvidianews.nvidia.com/bios/jensen-huang"
 source: "Article Desk: nvidia-board-reinstates-jensen-huang-ceo.md"
 ---
 NVIDIA's board has reinstated Jensen Huang as president, chief executive officer and a member of the board, [the company announced](https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director) on Monday morning, November 23. The release says the change is "effective immediately" and that the board "voted unanimously" for it. The release gives a date but no time. NVIDIA's newsroom account [shared it on X](https://x.com/nvidianewsroom/status/2124865060397019480) at 7:58 a.m. CT, and [The Verge](https://www.theverge.com/tech/1039937/nvidia-ceo-jensen-huang-reinstated) reported the news at 8:04 a.m. CT.
+
+![Jensen Huang, NVIDIA founder and CEO, in a black leather jacket with arms crossed](/images/nvidia-board-reinstates-jensen-huang-ceo/image-1.jpg)
+*Jensen Huang, NVIDIA founder and CEO. Image: NVIDIA.*
 
 The return comes 11 days after NVIDIA [announced on November 12](/posts/nvidia-jensen-huang-resigns-colette-kress-interim-ceo/) that Huang had resigned and that CFO Colette Kress would serve as interim CEO.
 
@@ -53,6 +58,6 @@ Our [November 12 report](/posts/nvidia-jensen-huang-resigns-colette-kress-interi
 
 **Our take (opinion):** the board is betting that the investigation won't turn up anything that changes its mind, and it is saying so publicly before that investigation is done. What the committee finds, and who becomes Chief Compliance Officer, will be the next things to watch.
 
-*Sources:* [NVIDIA Newsroom: NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director, Nov. 23, 2026 (no time stated)](https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director), [NVIDIA Newsroom on X (@nvidianewsroom), Nov. 23, 2026, 7:58 a.m. CT](https://x.com/nvidianewsroom/status/2124865060397019480), [The Verge, Nov. 23, 2026, 8:04 a.m. CT: Jensen Huang is back as Nvidia's CEO](https://www.theverge.com/tech/1039937/nvidia-ceo-jensen-huang-reinstated), [VetTV News, Nov. 12, 2026: NVIDIA Says Jensen Huang Resigned; Colette Kress Named Interim CEO](/posts/nvidia-jensen-huang-resigns-colette-kress-interim-ceo/)
+*Sources:* [NVIDIA Newsroom: NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director, Nov. 23, 2026 (no time stated)](https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director), [NVIDIA Newsroom on X (@nvidianewsroom), Nov. 23, 2026, 7:58 a.m. CT](https://x.com/nvidianewsroom/status/2124865060397019480), [The Verge, Nov. 23, 2026, 8:04 a.m. CT: Jensen Huang is back as Nvidia's CEO](https://www.theverge.com/tech/1039937/nvidia-ceo-jensen-huang-reinstated), [VetTV News, Nov. 12, 2026: NVIDIA Says Jensen Huang Resigned; Colette Kress Named Interim CEO](/posts/nvidia-jensen-huang-resigns-colette-kress-interim-ceo/), [NVIDIA Newsroom: Jensen Huang executive bio and official headshot (photo source)](https://nvidianews.nvidia.com/bios/jensen-huang)
 
 *Cover image: NVIDIA logo. Image: NVIDIA. Not AI-generated.*
