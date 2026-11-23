@@ -55,4 +55,4 @@ Our [November 12 report](/posts/nvidia-jensen-huang-resigns-colette-kress-interi
 
 *Sources:* [NVIDIA Newsroom: NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director, Nov. 23, 2026 (no time stated)](https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director), [NVIDIA Newsroom on X (@nvidianewsroom), Nov. 23, 2026, 7:58 a.m. CT](https://x.com/nvidianewsroom/status/2124865060397019480), [The Verge, Nov. 23, 2026, 8:04 a.m. CT: Jensen Huang is back as Nvidia's CEO](https://www.theverge.com/tech/1039937/nvidia-ceo-jensen-huang-reinstated), [VetTV News, Nov. 12, 2026: NVIDIA Says Jensen Huang Resigned; Colette Kress Named Interim CEO](/posts/nvidia-jensen-huang-resigns-colette-kress-interim-ceo/)
 
-*Cover:* Original typographic artwork by VetTV News. No third-party photos, screenshots, or leaked images were used.
+*Cover image: NVIDIA logo. Image: NVIDIA. Not AI-generated.*
