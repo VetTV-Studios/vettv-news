@@ -68,4 +68,4 @@ Component updates listed in the release: **vkd3d 2.1**, **Wine Mono 11.3.0**, **
 
 *Sources:* [ValveSoftware/Proton: proton-11.0-3, Nov. 24, 2026, 12:22 a.m. CT](https://github.com/ValveSoftware/Proton/releases/tag/proton-11.0-3), [GamingOnLinux, Nov. 24, 2026, 1:36 a.m. CT](https://www.gamingonlinux.com/2026/11/proton-11-0-3-is-out-now-bringing-lots-of-fixes-for-windows-games-on-steamos-linux/)
 
-*Cover:* Original typographic artwork by VetTV News. No third-party photos, screenshots, or leaked images were used.
+*Cover image: Valve, https://www.steamdeck.com/en/press*

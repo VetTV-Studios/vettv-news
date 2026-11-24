@@ -49,4 +49,4 @@ To move to this exact image, the release notes give `bazzite-rollback-helper reb
 
 *Sources:* [ublue-os/bazzite: 45.20261123.1 Stable, Nov. 23, 2026, 5:05 p.m. CT](https://github.com/ublue-os/bazzite/releases/tag/45.20261123.1), [ublue-os/bazzite: 45.20261123 Stable](https://github.com/ublue-os/bazzite/releases/tag/45.20261123), [ublue-os/bazzite container images on ghcr.io, stable tag checked Nov. 24, 2026](https://github.com/ublue-os/bazzite/pkgs/container/bazzite), [VetTV News: Bazzite Stable 45.20261117](/posts/bazzite-stable-45-20261117/)
 
-*Cover:* Original typographic artwork by VetTV News. No third-party photos, screenshots, or leaked images were used.
+*Cover image: Bazzite, https://bazzite.gg/*

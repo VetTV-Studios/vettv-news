@@ -67,4 +67,4 @@ Those are the project's own results and limits. We have not independently booted
 
 *Sources:* [AFK-surf/xnulinux README](https://github.com/AFK-surf/xnulinux), [AFK-surf/xnulinux: docs/production.md](https://github.com/AFK-surf/xnulinux/blob/main/docs/production.md), [AppleInsider, Nov. 24, 2026, 8:24 a.m. CT: XNULinux can run macOS apps in Linux without a virtual machine](https://appleinsider.com/articles/26/11/24/xnulinux-can-run-macos-apps-in-linux-without-a-virtual-machine)
 
-*Cover:* Original typographic artwork by VetTV News. No third-party photos, screenshots, or leaked images were used.
+*Cover image: XNULinux, https://github.com/AFK-surf/xnulinux*

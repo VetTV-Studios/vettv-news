@@ -41,4 +41,4 @@ PC Gamer also reminded readers that software piracy is illegal, and that unoffic
 
 *Sources:* [PC Gamer, Nov. 23, 2026: Cyberleek releases executable for GTA 6 Xbox build leaked last week, by Andy Chalk](https://www.pcgamer.com/games/grand-theft-auto/cyberleek-releases-executable-for-gta-6-xbox-build-leaked-last-week-the-torch-passes-to-the-open-source-recomp-and-emulation-projects/)
 
-*Cover:* Original typographic artwork by VetTV News. No third-party photos, screenshots, or leaked images were used.
+*Cover image: Rockstar Games, https://www.rockstargames.com/VI*

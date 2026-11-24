@@ -49,4 +49,4 @@ Valve says it will reveal the nominees when voting opens "alongside the start of
 
 *Sources:* [Valve: More Steam Community Market Updates, Nov. 23, 2026, 4:26 p.m. CT](https://store.steampowered.com/news/app/593110/view/678515036155545443), [Valve: Nominations are open for the 2026 Steam Awards!, Nov. 23, 2026, 12:13 p.m. CT](https://store.steampowered.com/news/app/593110/view/685271070563893997), [PC Gamer, Nov. 24, 2026: Steam revamps its marketplace for the 2nd time this year](https://www.pcgamer.com/software/platforms/steam-revamps-its-marketplace-for-the-2nd-time-this-year/)
 
-*Cover:* Original typographic artwork by VetTV News. No third-party photos, screenshots, or leaked images were used.
+*Cover image: Valve, https://store.steampowered.com/steamawards/*

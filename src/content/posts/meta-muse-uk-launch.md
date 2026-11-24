@@ -74,4 +74,4 @@ On **November 23**, [The Verge reported](https://www.theverge.com/ai-artificial-
 
 *Sources:* [Meta Newsroom: Introducing Muse in the UK, dated Nov. 23, 2026, updated Nov. 24](https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/), [The Verge, Nov. 24, 2026, 3:46 a.m. CT: Meta's Muse agent launches in the UK](https://www.theverge.com/tech/1041084/metas-muse-agent-launches-in-the-uk), [The Verge, Nov. 23, 2026: Meta Muse can do your Black Friday shopping at Walmart (U.S. Agent Gateway)](https://www.theverge.com/ai-artificial-intelligence/1039874/walmart-agent-gateway-meta-muse-black-friday)
 
-*Cover:* Original typographic artwork by VetTV News. No third-party photos, screenshots, or leaked images were used.
+*Cover image: Meta, https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/*

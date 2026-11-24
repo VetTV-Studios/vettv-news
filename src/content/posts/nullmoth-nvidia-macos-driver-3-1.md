@@ -57,4 +57,4 @@ Those are NullMoth's own release notes and documentation. We have not independen
 
 *Sources:* [nullmoth/nvidia-macos-driver: v3.1 GitHub release, Nov. 23, 2026, 10:36 p.m. CT](https://github.com/nullmoth/nvidia-macos-driver/releases/tag/v3.1), [nullmoth/nvidia-macos-driver: CHANGELOG.md, 3.1](https://github.com/nullmoth/nvidia-macos-driver/blob/main/CHANGELOG.md), [nullmoth/nvidia-macos-driver README](https://github.com/nullmoth/nvidia-macos-driver), [nullmoth/nvidia-macos-driver: docs/CARD-SUPPORT.md](https://github.com/nullmoth/nvidia-macos-driver/blob/main/docs/CARD-SUPPORT.md), [VetTV News, Oct. 28, 2026: NVIDIA on macOS Again? NullMoth's Experimental Metal Driver](/posts/nvidia-on-macos-nullmoth-driver/)
 
-*Cover:* Original typographic artwork by VetTV News. No third-party photos, screenshots, or leaked images were used.
+*Cover image: NullMoth, https://nullmothsystems.com/nvidia*
