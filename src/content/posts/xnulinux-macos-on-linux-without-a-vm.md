@@ -19,6 +19,10 @@ sources:
     url: "https://github.com/AFK-surf/xnulinux/blob/main/docs/production.md"
   - title: "AppleInsider, Nov. 24, 2026, 8:24 a.m. CT: XNULinux can run macOS apps in Linux without a virtual machine"
     url: "https://appleinsider.com/articles/26/11/24/xnulinux-can-run-macos-apps-in-linux-without-a-virtual-machine"
+  - title: "Apple Software License Agreements"
+    url: "https://www.apple.com/legal/sla/"
+  - title: "Apple, Software License Agreement for macOS, July 11, 2026"
+    url: "https://www.apple.com/legal/sla/docs/macOS27.pdf"
 source: "Article Desk: xnulinux-macos-on-linux-without-a-vm.md"
 ---
 [XNULinux](https://github.com/AFK-surf/xnulinux) is an open-source project that builds **XNU**, the kernel Apple publishes for macOS, from those sources and runs it as a loadable kernel module inside Linux. The goal is to run macOS userspace on an arm64 Linux host **without a hypervisor** sitting between the two kernels.
@@ -53,6 +57,8 @@ You also need:
 - **A Mac with Xcode**, "to make the system disk and build the GPU parts."
 - **A macOS 27 installation of your own** (the README specifies an Apple Virtualization VM disk). "No Apple binaries are in this repository or distributed by it": Apple's kexts, the system disk, and its trust cache "come from your own installation."
 
+Apple's current [macOS Software License Agreement](https://www.apple.com/legal/sla/) permits installing and running macOS only on Apple-branded hardware, so running it on non-Apple Linux hosts such as the DGX Spark falls outside those terms, a similar gray area to Hackintosh builds. The project's Apple silicon tests run Linux VMs on Macs. VetTV is not offering legal advice.
+
 XNULinux **cannot boot on its own**. It is a pair of Linux kernel modules (`fki.ko` and `xnu.ko`) loaded on an already-running Linux host. There is no standalone bootloader in the project that starts macOS without Linux. That is the limit AppleInsider is pointing at when it says the project is "still not bootable."
 
 The project is also early. [A production notes file](https://github.com/AFK-surf/xnulinux/blob/main/docs/production.md) lists remaining stopgaps. The README highlights a few: "the OS cryptex is merged into the system volume, AMFI is patched and SIP relaxed, and memory access is slower than a native VM (4K pages vs 16K)."
@@ -65,6 +71,6 @@ The project says it is not affiliated with or endorsed by Apple. The README list
 
 Those are the project's own results and limits. We have not independently booted XNULinux.
 
-*Sources:* [AFK-surf/xnulinux README](https://github.com/AFK-surf/xnulinux), [AFK-surf/xnulinux: docs/production.md](https://github.com/AFK-surf/xnulinux/blob/main/docs/production.md), [AppleInsider, Nov. 24, 2026, 8:24 a.m. CT: XNULinux can run macOS apps in Linux without a virtual machine](https://appleinsider.com/articles/26/11/24/xnulinux-can-run-macos-apps-in-linux-without-a-virtual-machine)
+*Sources:* [AFK-surf/xnulinux README](https://github.com/AFK-surf/xnulinux), [AFK-surf/xnulinux: docs/production.md](https://github.com/AFK-surf/xnulinux/blob/main/docs/production.md), [AppleInsider, Nov. 24, 2026, 8:24 a.m. CT: XNULinux can run macOS apps in Linux without a virtual machine](https://appleinsider.com/articles/26/11/24/xnulinux-can-run-macos-apps-in-linux-without-a-virtual-machine), [Apple Software License Agreements](https://www.apple.com/legal/sla/), [Apple, Software License Agreement for macOS, July 11, 2026](https://www.apple.com/legal/sla/docs/macOS27.pdf)
 
 *Cover image: XNULinux, https://github.com/AFK-surf/xnulinux*
