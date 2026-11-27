@@ -1,0 +1,34 @@
+---
+import { url } from '../site';
+type PageLike = { currentPage: number; lastPage: number };
+const { page, base } = Astro.props as { page: PageLike; base: string };
+const hrefFor = (n: number) => (n <= 1 ? url(base) : url(`${base.replace(/\/$/, '')}/${n}`));
+const pages: (number | 'gap')[] = [];
+if (page.lastPage > 1) {
+  const keep = new Set([1, page.lastPage]);
+  for (let i = page.currentPage - 2; i <= page.currentPage + 2; i++) {
+    if (i >= 1 && i <= page.lastPage) keep.add(i);
+  }
+  let prev: number | undefined;
+  for (const n of [...keep].sort((a, b) => a - b)) {
+    if (prev !== undefined && n - prev > 1) pages.push('gap');
+    pages.push(n);
+    prev = n;
+  }
+}
+---
+{page.lastPage > 1 && (
+  <nav class="pager" aria-label="Pagination">
+    {page.currentPage > 1
+      ? <a href={hrefFor(page.currentPage - 1)} rel="prev">Prev</a>
+      : <span class="off" aria-hidden="true">Prev</span>}
+    {pages.map((n) => n === 'gap'
+      ? <span class="gap" aria-hidden="true">…</span>
+      : n === page.currentPage
+        ? <span class="on" aria-current="page">{n}</span>
+        : <a href={hrefFor(n)}>{n}</a>)}
+    {page.currentPage < page.lastPage
+      ? <a href={hrefFor(page.currentPage + 1)} rel="next">Next</a>
+      : <span class="off" aria-hidden="true">Next</span>}
+  </nav>
+)}

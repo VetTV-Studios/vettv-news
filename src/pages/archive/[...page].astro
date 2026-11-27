@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Card from '../../components/Card.astro';
+import Pagination from '../../components/Pagination.astro';
+import { sortPosts, ARCHIVE_PAGE_SIZE } from '../../site';
+
+export async function getStaticPaths({ paginate }) {
+  const posts = sortPosts(await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1'));
+  return paginate(posts, { pageSize: ARCHIVE_PAGE_SIZE });
+}
+
+const { page } = Astro.props;
+const title = page.currentPage > 1 ? `Archive · page ${page.currentPage}` : 'Archive';
+---
+<Base title={title} description="Every published VetTV News story, newest first." active="archive">
+  <header class="page-head">
+    <p class="kicker">Full archive</p>
+    <h1 class="page-h">Archive</h1>
+    <p class="cat-desc">Every published story, newest first. These URLs stay put as newer stories land on earlier pages.</p>
+    <p class="muted stat">{page.total} {page.total === 1 ? 'story' : 'stories'}{page.lastPage > 1 && <> · page {page.currentPage} of {page.lastPage}</>}</p>
+  </header>
+  <div class="river">{page.data.map((p) => <Card post={p} variant="river" />)}</div>
+  <Pagination page={page} base="archive" />
+</Base>

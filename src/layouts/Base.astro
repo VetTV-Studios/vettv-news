@@ -9,7 +9,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/Chicago' });
 const FOOT: [string, [string, string][]][] = [
   ['Sections', [...Object.entries(CATS).map(([k, v]) => [v, k] as [string, string]), ['Videos', 'videos']]],
-  ['Trackers & tools', [['Upcoming', 'upcoming'], ['Soft Launches', 'soft-launches'], ['Delistings', 'delistings'], ['Guides', 'guides'], ['Reviews', 'reviews'], ['Tags', 'tags'], ['Search', 'search']]],
+  ['Trackers & tools', [['Archive', 'archive'], ['Upcoming', 'upcoming'], ['Soft Launches', 'soft-launches'], ['Delistings', 'delistings'], ['Guides', 'guides'], ['Reviews', 'reviews'], ['Tags', 'tags'], ['Search', 'search']]],
   ['About', [['About VetTV News', 'about'], ['Official links', 'official-links'], ['Write to us', 'contact'], ['Subscribe', 'subscribe']]],
   ['Legal', [['Privacy Policy', 'privacy'], ['Terms of Use', 'terms'], ['Affiliate disclosure', 'affiliate-disclosure'], ['Content disclosure', 'content-disclosure']]],
 ];
@@ -40,7 +40,7 @@ const moreActive = NAV_MORE.some(([k]) => k === active) || ['soft-launches', 'de
   <div class="wrap util-in">
     <span>{today} · {SITE.tagline}</span>
     <span class="util-r">
-      <a href={url('guides')}>Guides</a><a href={url('reviews')}>Reviews</a><a href={url('upcoming')}>Upcoming</a>
+      <a href={url('archive')}>Archive</a><a href={url('guides')}>Guides</a><a href={url('reviews')}>Reviews</a><a href={url('upcoming')}>Upcoming</a>
       <a href={asset('rss.xml')}>RSS</a><a class="util-sub" href={url('subscribe')}>Subscribe free</a>
     </span>
   </div>
@@ -73,7 +73,7 @@ const moreActive = NAV_MORE.some(([k]) => k === active) || ['soft-launches', 'de
   {Object.entries(CATS).map(([k, v]) => <a class={`m-sec ${active === k ? 'on' : ''}`} href={url(k)}><b>{v}</b><small>{CAT_DESC[k]}</small></a>)}
   <a class={`m-sec ${active === 'videos' ? 'on' : ''}`} href={url('videos')}><b>Videos</b><small>VetTV on YouTube.</small></a>
   <p class="m-drawer-h">Trackers</p><div class="m-drawer-links"><a href={url('upcoming')}>Upcoming</a><a href={url('soft-launches')}>Soft Launches</a><a href={url('delistings')}>Delistings</a></div>
-  <div class="m-drawer-links"><a href={url('guides')}>Guides</a><a href={url('reviews')}>Reviews</a><a href={url('tags')}>Tags</a><a href={url('subscribe')}>Subscribe</a><a href={asset('rss.xml')}>RSS</a><a href={SITE.youtube}>YouTube</a></div>
+  <div class="m-drawer-links"><a href={url('archive')}>Archive</a><a href={url('guides')}>Guides</a><a href={url('reviews')}>Reviews</a><a href={url('tags')}>Tags</a><a href={url('subscribe')}>Subscribe</a><a href={asset('rss.xml')}>RSS</a><a href={SITE.youtube}>YouTube</a></div>
 </div>
 <main class="wrap" id="main"><slot /></main>
 <footer class="foot">

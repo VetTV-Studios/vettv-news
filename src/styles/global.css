@@ -294,6 +294,19 @@ a.kick:hover{color:var(--cy)}
 .foot-copy{display:flex;align-items:center;gap:8px;justify-content:center;flex-wrap:wrap;color:var(--mut);font-size:.82rem;margin:0;text-align:center}
 .foot-copy img{opacity:.85}
 
+
+/* pagination */
+.pager{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin:28px 0 8px}
+.pager a,.pager span{min-width:40px;min-height:40px;padding:0 12px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:var(--rad);color:var(--txt);font-weight:700;font-size:.9rem;background:var(--card)}
+.pager a:hover{border-color:var(--cy);color:var(--cy)}
+.pager .on{background:var(--cy);color:#14061f;border-color:var(--cy)}
+.pager .off,.pager .gap{border-color:transparent;background:transparent;color:var(--mut)}
+
+/* outdated-story update banner */
+.update-banner{margin:0 0 18px;padding:14px 16px;border:1px solid var(--cy);border-left-width:4px;background:#22e6ff18;border-radius:var(--rad);color:var(--txt)}
+.update-banner .update-kicker{display:inline-block;color:#14061f;background:var(--cy);font-weight:800;text-transform:uppercase;letter-spacing:1.2px;font-size:.72rem;padding:2px 8px;border-radius:3px}
+.update-banner p{margin:8px 0 0;font-size:.95rem;line-height:1.5}
+.update-banner a{font-weight:700}
 /* responsive */
 .m-only{display:none}
 @media (max-width:1100px){

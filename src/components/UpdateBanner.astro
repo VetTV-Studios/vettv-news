@@ -1,0 +1,19 @@
+---
+import { normalizeSupersededBy } from '../site';
+const { data } = Astro.props as {
+  data: { updatedNotice?: string; supersededBy?: string | { url: string; title?: string }; supersededByTitle?: string };
+};
+const link = normalizeSupersededBy(data);
+const notice = data.updatedNotice?.trim();
+---
+{(notice || link) && (
+  <aside class="update-banner" role="note">
+    <span class="update-kicker">Updated</span>
+    {notice && <p>{notice}</p>}
+    {link && (
+      <p>
+        <a href={link.href}>{link.title || 'Read the newer story'}</a>
+      </p>
+    )}
+  </aside>
+)}

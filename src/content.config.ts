@@ -10,6 +10,16 @@ const posts = defineCollection({
     source: z.string().optional(), summary: z.string().optional(), seoTitle: z.string().optional(), offTopic: z.boolean().default(false),
     type: z.enum(['news','opinion','guide','review','deal']).default('news'), trending: z.boolean().default(false), draft: z.boolean().default(false), platforms: z.array(z.string()).default([]),
     sources: z.array(z.object({ title: z.string(), url: z.string().url() })).default([]),
+    // Homepage featured slot. If featuredUntil is omitted, eligibility expires 48 hours
+    // after publishedAt/pubDate for news, or 5 days for guides, reviews and explainers.
+    featuredUntil: z.coerce.date().optional(),
+    // Post "Updated" banner. supersededBy may be a URL/path string or { url, title }.
+    updatedNotice: z.string().optional(),
+    supersededBy: z.union([
+      z.string(),
+      z.object({ url: z.string(), title: z.string().optional() }),
+    ]).optional(),
+    supersededByTitle: z.string().optional(),
   }),
 });
 export const TYPES = ['news','opinion','guide','review','deal'] as const;

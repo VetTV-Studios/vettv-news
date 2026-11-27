@@ -1,15 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro'; import Card from '../components/Card.astro'; import Tracker from '../components/Tracker.astro';
-import { CATS, CAT_DESC, TYPE_LABEL, url, asset, coverSrc, coverSrcset, fmt, ago, sortPosts, mostRead, publishedOn } from '../site'; import { TRACKERS, sortRows } from '../tracker';
+import { CATS, CAT_DESC, TYPE_LABEL, url, asset, coverSrc, coverSrcset, fmt, ago, sortPosts, mostRead, publishedOn, pickFeaturedPost, isFeaturedEligible, HOME_FEED_SIZE } from '../site'; import { TRACKERS, sortRows } from '../tracker';
 const posts = sortPosts(await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1'));
-const onTopic = posts.filter(p => !p.data.offTopic && !p.data.sample);
-// Top stories: the pinned SteamOS lead keeps its slot when present, then editor picks, then the newest coverage.
-const lead = posts.find(p => p.id === 'steamos-3-9-stable-daily-2026-10-24') ?? onTopic[0] ?? posts[0];
-const topPool = [...new Set([lead, ...posts.filter(p => p.data.trending), ...onTopic, ...posts])];
-const secondary = topPool.filter(p => p.id !== lead.id).slice(0, 4);
-const topIds = new Set([lead, ...secondary].map(p => p.id));
-const latest = posts.filter(p => !topIds.has(p.id)).slice(0, 14);
+// Featured slot: newest still-eligible featured:true post, else the latest published story so the slot never goes stale.
+const lead = pickFeaturedPost(posts) ?? posts[0];
+const feed = posts.filter(p => p.id !== lead.id).slice(0, HOME_FEED_SIZE);
+const secondary = feed.slice(0, 4);
+const latest = feed.slice(4);
+const featuredLive = isFeaturedEligible(lead);
 const popular = mostRead(posts, undefined, 6);
 const guides = posts.filter(p => p.data.type === 'guide').slice(0, 4);
 const reviews = posts.filter(p => p.data.type === 'review').slice(0, 4);
@@ -30,7 +29,7 @@ const ticker = posts.slice(0, 6);
     <article class="lead-story">
       <a class="lead-media" href={url(`posts/${lead.id}`)}>
         <img src={coverSrc(lead.data.cover || 'art/banner_2560x1440.png', 960)} srcset={lead.data.cover ? coverSrcset(lead.data.cover) : undefined} sizes="(max-width:900px) 100vw, 800px" alt="" width="1200" height="675" fetchpriority="high" />
-        <span class="badges"><span class="pill feat">Top story</span><span class="pill">{CATS[lead.data.category]}</span>{tl(lead) && <span class={`type type-${tl(lead)}`}>{TYPE_LABEL[tl(lead)]}</span>}</span>
+        <span class="badges"><span class="pill feat">{featuredLive ? "Featured" : "Top story"}</span><span class="pill">{CATS[lead.data.category]}</span>{tl(lead) && <span class={`type type-${tl(lead)}`}>{TYPE_LABEL[tl(lead)]}</span>}</span>
       </a>
       <div class="lead-copy">
         <h1><a href={url(`posts/${lead.id}`)}>{lead.data.title}</a></h1>
@@ -53,9 +52,9 @@ const ticker = posts.slice(0, 6);
 
   <div class="home-desk">
     <div class="home-main">
-      <h2 class="sec"><span>Latest stories</span><a class="sec-cta" href={url('news')}>All stories →</a></h2>
+      <h2 class="sec"><span>Latest stories</span><a class="sec-cta" href={url('archive')}>Full archive →</a></h2>
       <div class="river">{latest.map(p => <Card post={p} variant="river" />)}</div>
-      <a class="more-link" href={url('news')}>Browse all stories →</a>
+      <a class="more-link" href={url('archive')}>View full archive</a>
 
       {(guides.length > 0 || reviews.length > 0) && (
         <section class="duo" aria-label="Guides and reviews">
@@ -71,7 +70,7 @@ const ticker = posts.slice(0, 6);
         <a class="rail-btn" href={url('subscribe')}>Get it free</a>
         <p class="muted rail-fine">Prefer a feed? <a href={asset('rss.xml')}>Grab the RSS</a>.</p>
       </div>
-      <div class="rail-block"><h2 class="rail-title">Sections</h2><ul class="rail-secs">{Object.entries(CATS).filter(([k]) => k !== 'news').map(([k, v]) => <li><a href={url(k)}>{v}</a></li>)}<li><a href={url('videos')}>Videos</a></li></ul></div>
+      <div class="rail-block"><h2 class="rail-title">Sections</h2><ul class="rail-secs">{Object.entries(CATS).filter(([k]) => k !== 'news').map(([k, v]) => <li><a href={url(k)}>{v}</a></li>)}<li><a href={url('videos')}>Videos</a></li><li><a href={url('archive')}>Archive</a></li></ul></div>
     </aside>
   </div>
 

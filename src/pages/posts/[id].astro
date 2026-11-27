@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Base from '../../layouts/Base.astro'; import Card from '../../components/Card.astro'; import Subscribe from '../../components/Subscribe.astro'; import BotsCard from '../../components/BotsCard.astro';
+import Base from '../../layouts/Base.astro'; import Card from '../../components/Card.astro'; import Subscribe from '../../components/Subscribe.astro'; import BotsCard from '../../components/BotsCard.astro'; import UpdateBanner from '../../components/UpdateBanner.astro';
 import { CATS, TYPE_LABEL, url, asset, coverSrc, coverSrcset, fmt, SITE, sortPosts, readMins, publishedOn } from '../../site';
 export async function getStaticPaths() { return (await getCollection('posts', ({ data }) => !data.draft || process.env.SHOW_DRAFTS === '1')).map(post => ({ params: { id: post.id }, props: { post } })); }
 const { post } = Astro.props; const d = post.data; const { Content } = await render(post);
@@ -37,6 +37,7 @@ const ld = {
     <div class="meta kicker-row" data-pagefind-ignore><a class="pill" href={url(d.category)}>{CATS[d.category]}</a>{t && <span class={`type type-${t}`}>{TYPE_LABEL[t]}</span>}{d.sample && <span class="pill sample">Sample</span>}</div>
     <h1>{d.title}</h1><p class="dek">{d.description}</p>
     {d.type === 'opinion' && <p class="opinion-note" data-pagefind-ignore>Opinion: this piece is the author's view, not straight news.</p>}
+    <UpdateBanner data={d} />
     <div class="byline-card" data-pagefind-ignore>
       <img src={asset('art/profile-96.webp')} alt="" width="44" height="44" />
       <div><b>By {d.author}</b><span><time datetime={d.pubDate.toISOString()}>{fmt(d.pubDate)}</time> · {readMins(post.body)} min read</span></div>

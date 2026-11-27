@@ -21,6 +21,7 @@ export const NAV_MORE: [string, string][] = [
   ['windows', 'Windows'], ['linux-steamos', 'Linux & SteamOS'], ['macos', 'macOS'], ['open-nt', 'Open NT'],
   ['projects', 'Projects'], ['videos', 'Videos'], ['upcoming', 'Upcoming'], ['soft-launches', 'Soft Launches'],
   ['delistings', 'Delistings'], ['guides', 'Guides'], ['reviews', 'Reviews'], ['tags', 'Tags'],
+  ['archive', 'Archive'],
 ];
 export const url = (p = '') => { const b = import.meta.env.BASE_URL.replace(/\/$/, ''); p = p.replace(/^\/|\/$/g, ''); return p ? `${b}/${p}/` : `${b}/`; };
 export const asset = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + '/' + p.replace(/^\//, '');
@@ -66,4 +67,55 @@ export const CAT_DESC: Record<string, string> = {
   'open-nt': 'Free, open Windows-compatible systems: ReactOS, its forks, and the people pushing them.',
   'deals': 'Game and hardware deals checked against Steam Deck ratings, with prices and end times called out.',
   'projects': "Dev logs and progress reports from VetTV's own builds and experiments.",
+};
+
+export const HOME_FEED_SIZE = 18;
+export const ARCHIVE_PAGE_SIZE = 24;
+export const CATEGORY_PAGE_SIZE = 18;
+const FEATURED_NEWS_MS = 48 * 60 * 60 * 1000;
+const FEATURED_GUIDE_MS = 5 * 24 * 60 * 60 * 1000;
+
+const GUIDE_TYPES = new Set(['guide', 'review']);
+const GUIDE_TAGS = new Set(['guide', 'guides', 'explainer', 'explainers', 'how-to', 'howto']);
+
+export const featuredWindowMs = (data: { type?: string; tags?: string[]; category?: string }) => {
+  const type = (data.type || '').toLowerCase();
+  const tags = (data.tags || []).map((t) => t.toLowerCase());
+  if (GUIDE_TYPES.has(type) || tags.some((t) => GUIDE_TAGS.has(t))) return FEATURED_GUIDE_MS;
+  return FEATURED_NEWS_MS;
+};
+
+export const isFeaturedEligible = <T extends {
+  data: { featured?: boolean; featuredUntil?: Date; publishedAt?: Date; pubDate: Date; type?: string; tags?: string[]; category?: string };
+}>(post: T, now = Date.now()) => {
+  if (!post.data.featured) return false;
+  const until = post.data.featuredUntil
+    ? +post.data.featuredUntil
+    : +publishedOn(post.data) + featuredWindowMs(post.data);
+  return now <= until;
+};
+
+// Newest eligible featured:true post wins; if none are still active, fall back to the latest published post.
+export const pickFeaturedPost = <T extends {
+  id: string;
+  data: { featured?: boolean; featuredUntil?: Date; publishedAt?: Date; pubDate: Date; order?: number; type?: string; tags?: string[]; category?: string };
+}>(posts: T[], now = Date.now()): T | undefined => {
+  const eligible = posts.filter((p) => isFeaturedEligible(p, now));
+  return (eligible.length ? sortPosts([...eligible]) : posts)[0];
+};
+
+type Superseded = { url: string; title?: string } | string;
+export const normalizeSupersededBy = (data: {
+  supersededBy?: Superseded;
+  supersededByTitle?: string;
+}): { href: string; title?: string } | undefined => {
+  const raw = data.supersededBy;
+  if (!raw) return;
+  const hrefIn = typeof raw === 'string' ? raw : raw.url;
+  const title = (typeof raw === 'string' ? undefined : raw.title) || data.supersededByTitle;
+  if (!hrefIn) return;
+  const href = /^(https?:)?\/\//i.test(hrefIn) || hrefIn.startsWith('mailto:')
+    ? hrefIn
+    : url(hrefIn.replace(/^\//, ''));
+  return { href, title };
 };
